@@ -200,7 +200,7 @@ export const HeroVisual: React.FC = () => {
             <span className="text-[11px] font-mono">
               {activeNode === 'ingest' && 'Ingesting environmental domain manuals & flood logs'}
               {activeNode === 'embed' && 'FAISS vector space similarity scoring'}
-              {activeNode === 'llm' && 'Qwen2.5-3B local CPU inference with zero hallucination'}
+              {activeNode === 'llm' && 'Qwen2.5-3B local CPU inference'}
               {activeNode === 'output' && 'Grounded context-aware response for engineering review'}
               {!activeNode && 'Hover components to inspect real-time architecture states'}
             </span>
