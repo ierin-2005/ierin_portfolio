@@ -149,7 +149,7 @@ export const HYDRO_GPT_DATA: HydroGPTProject = {
       label: 'Grounded Answer',
       subLabel: 'Context-Aware Response',
       description:
-        'Delivers an accurate, hallucination-resistant answer grounded strictly in verified hydrology engineering knowledge.',
+        'Generates hydrology-related answers using retrieved information from technical documents, helping users access relevant engineering knowledge while acknowledging the limitations of LLM-generated responses.',
       iconName: 'CheckCircle2',
     },
   ],
@@ -188,7 +188,6 @@ export const HYDRO_GPT_DATA: HydroGPTProject = {
     'FAISS-Based Vector Retrieval',
     'Embeddings & Document Processing',
     'Local CPU Inference via GGUF',
-    'Grounded, Low-Hallucination Answers',
     'Hydrology & Environmental Knowledge',
   ],
   technologies: [
