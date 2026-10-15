@@ -21,7 +21,7 @@ import {
 export const SOCIAL_LINKS: SocialLinks = {
   // Update these URLs to your live LinkedIn and GitHub profiles:
   github: 'https://github.com/ierin-2005',
-  linkedin: 'www.linkedin.com/in/ierin-p-menachery-370483285',
+  linkedin: 'https://www.linkedin.com/in/ierin-p-menachery-370483285/',
   email: 'ierinmenachery@gmail.com',
 };
 
