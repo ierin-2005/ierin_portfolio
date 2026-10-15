@@ -28,25 +28,27 @@ export const Contact: React.FC = () => {
     }
   };
 
-  const getMailtoLink = () => {
-    let subject = 'Regarding Opportunity / Collaboration — Ierin P Menachery';
-    let body =
-      'Hello Ierin,\n\nI reviewed your portfolio and would like to connect with you regarding...\n\nBest regards,';
 
-    if (inquiryTopic === 'recruiter') {
-      subject = 'Engineering Opportunity / Interview Invitation for Ierin';
-      body =
-        'Hi Ierin,\n\nI came across your portfolio and your work on HydroGPT and AI/ML at Larsen & Toubro. We are interested in discussing an opportunity with our engineering team...\n\nBest regards,';
-    } else if (inquiryTopic === 'project') {
-      subject = 'Technical Collaboration on AI / LLM Project';
-      body =
-        'Hi Ierin,\n\nI saw your work with RAG, FAISS, and Android development and would love to collaborate or discuss ideas on...\n\nBest regards,';
-    }
+const getMailtoLink = () => {
+  let subject = 'Regarding Opportunity / Collaboration — Ierin P Menachery';
+  let body =
+    'Hello Ierin,\n\nI reviewed your portfolio and would like to connect with you regarding...\n\nBest regards,';
 
-    return `mailto:${HERO_DATA.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-  };
+  if (inquiryTopic === 'recruiter') {
+    subject = 'Engineering Opportunity / Interview Invitation for Ierin';
+    body =
+      'Hi Ierin,\n\nI came across your portfolio and your work on HydroGPT and AI/ML at Larsen & Toubro. We are interested in discussing an opportunity with our engineering team...\n\nBest regards,';
+  } else if (inquiryTopic === 'project') {
+    subject = 'Technical Collaboration on AI / LLM Project';
+    body =
+      'Hi Ierin,\n\nI saw your work with RAG, FAISS, and Android development and would love to collaborate or discuss ideas on...\n\nBest regards,';
+  }
+
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+    HERO_DATA.email
+  )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+};
+
 
   return (
     <section id="contact" className="py-20 lg:py-28 relative border-t border-slate-800/80">
