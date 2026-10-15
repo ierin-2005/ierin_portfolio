@@ -51,12 +51,15 @@ export const Contact: React.FC = () => {
 
       body =
         'Hi Ierin,\n\n' +
+        'I came across your portfolio and your work on HydroGPT and AI/ML at Larsen & Toubro. ' +
+        'We are interested in discussing an opportunity with our engineering team...\n\n' +
         'Best regards,';
     } else if (inquiryTopic === 'project') {
       subject = 'Technical Collaboration on AI / LLM Project';
 
       body =
         'Hi Ierin,\n\n' +
+        'I saw your work with RAG, FAISS, and Android development and would love to collaborate or discuss ideas on...\n\n' +
         'Best regards,';
     }
 
