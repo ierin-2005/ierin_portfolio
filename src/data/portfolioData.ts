@@ -27,8 +27,8 @@ export const SOCIAL_LINKS: SocialLinks = {
 
 // Flag indicating whether placeholder URLs need user modification
 export const IS_SOCIAL_CONFIGURED = {
-  github: false, // Set to true once you set your real GitHub link
-  linkedin: false, // Set to true once you set your real LinkedIn link
+  github: true, // Set to true once you set your real GitHub link
+  linkedin: true, // Set to true once you set your real LinkedIn link
 };
 
 export const HERO_DATA: HeroData = {
