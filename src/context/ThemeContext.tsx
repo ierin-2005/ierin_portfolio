@@ -11,11 +11,16 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeMode>(() => {
-    // Default to dark theme as required
+    // Strictly default to dark theme for any visit or initial load
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('ipm-theme') as ThemeMode;
-      if (stored === 'light' || stored === 'dark') {
-        return stored;
+      try {
+        localStorage.removeItem('ipm-theme');
+        const stored = sessionStorage.getItem('ipm-theme') as ThemeMode;
+        if (stored === 'light' || stored === 'dark') {
+          return stored;
+        }
+      } catch {
+        // Fallback to dark
       }
     }
     return 'dark';
@@ -30,7 +35,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.add('light');
       root.classList.remove('dark');
     }
-    localStorage.setItem('ipm-theme', theme);
+    try {
+      sessionStorage.setItem('ipm-theme', theme);
+    } catch {
+      // Ignore storage errors
+    }
   }, [theme]);
 
   const toggleTheme = () => {

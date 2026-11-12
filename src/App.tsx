@@ -16,7 +16,7 @@ import { BackToTop } from './components/BackToTop';
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[#f8fafc] dark:bg-[#070a12] text-slate-900 dark:text-slate-100 transition-colors duration-300 relative selection:bg-cyan-500/30 selection:text-cyan-800 dark:selection:text-cyan-200">
+      <div className="min-h-screen bg-[#070a12] dark:bg-[#070a12] light:bg-[#f8fafc] text-slate-100 dark:text-slate-100 light:text-slate-900 transition-colors duration-300 relative selection:bg-cyan-500/30 selection:text-cyan-200 light:selection:text-cyan-800">
         {/* Skip to main content accessible link */}
         <a
           href="#main-content"

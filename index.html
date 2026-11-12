@@ -48,6 +48,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Theme initialization: strictly defaults to dark mode -->
+    <script>
+      (function () {
+        try {
+          // Clear any legacy localStorage light theme setting so dark mode is strictly default
+          localStorage.removeItem('ipm-theme');
+          var sessionTheme = sessionStorage.getItem('ipm-theme');
+          if (sessionTheme === 'light') {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body class="bg-background-dark text-slate-100 font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-300 transition-colors duration-300">
     <div id="root"></div>

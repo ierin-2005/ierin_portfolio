@@ -9,12 +9,30 @@
   
   html {
     scroll-padding-top: 5rem;
+    background-color: #070a12;
+    color: #f1f5f9;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   @media (min-width: 768px) {
     html {
       scroll-padding-top: 5.5rem;
     }
+  }
+
+  body {
+    background-color: #070a12;
+    color: #f1f5f9;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  html.dark,
+  html.dark body {
+    color-scheme: dark;
+    background-color: #070a12;
+    color: #f1f5f9;
   }
 
   html.light {
@@ -26,12 +44,6 @@
   html.light body {
     background-color: #f8fafc;
     color: #0f172a;
-  }
-
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
   }
 
   /* Custom subtle scrollbar */
