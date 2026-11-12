@@ -1,114 +1,130 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Calendar, MapPin, CheckCircle2, Sparkles } from 'lucide-react';
+import { Building2, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 import { EXPERIENCES } from '../data/portfolioData';
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="experience"
+      className="py-24 sm:py-32 lg:py-40 bg-warm-bg text-warm-dark relative overflow-hidden border-b border-warm-border"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-start mb-14"
-        >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
-            <span>03 / INTERNSHIP EXPERIENCE</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Industry &amp; Research <span className="text-gradient">Internships</span>
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            Hands-on technical contributions across enterprise AI/ML engineering, embedded hardware systems, and mobile software development.
-          </p>
-        </motion.div>
+        <div className="mb-16 sm:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-3 mb-6"
+          >
+            <span className="w-2.5 h-0.5 bg-orange" />
+            <span className="font-mono text-xs sm:text-sm tracking-widest text-orange uppercase font-bold">
+              03 / EXPERIENCE
+            </span>
+          </motion.div>
 
-        {/* Polished Editorial Timeline (Newest First) */}
-        <div className="relative pl-6 sm:pl-8 border-l-2 border-slate-300 dark:border-slate-800/90 space-y-12 max-w-4xl">
-          {EXPERIENCES.map((exp, idx) => (
-            <motion.div
-              key={exp.id}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: idx * 0.1 }}
-              className="relative group"
-            >
-              {/* Timeline Node Indicator */}
-              <div
-                className={`absolute -left-[31px] sm:-left-[39px] top-2 w-5 h-5 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${
-                  idx === 0
-                    ? 'bg-cyan-500 border-white dark:border-slate-900 shadow-md dark:shadow-glow-cyan ring-4 ring-cyan-500/20'
-                    : 'bg-slate-300 dark:bg-slate-800 border-slate-200 dark:border-slate-700 ring-2 ring-slate-200 dark:ring-slate-800'
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-extrabold text-section-heading text-warm-dark tracking-tight"
+          >
+            Where I've learned <span className="text-orange">by building.</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-4 text-base sm:text-lg text-warm-dark/70 max-w-2xl font-light"
+          >
+            Engineering internships spanning enterprise AI/ML architectures, embedded hardware prototyping, and mobile applications.
+          </motion.p>
+        </div>
+
+        {/* Clean Editorial Timeline */}
+        <div className="space-y-8 sm:space-y-12 max-w-5xl">
+          {EXPERIENCES.map((exp, idx) => {
+            const isFeatured = idx === 0; // L&T is highlighted prominently
+
+            return (
+              <motion.div
+                key={exp.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className={`p-6 sm:p-8 lg:p-10 border transition-all ${
+                  isFeatured
+                    ? 'bg-white border-orange shadow-editorial ring-1 ring-orange/30'
+                    : 'bg-white/80 border-warm-border hover:border-warm-muted'
                 }`}
-              />
-
-              {/* Experience Card */}
-              <div className="p-5 sm:p-7 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 shadow-lg hover:shadow-glow-cyan">
-                {/* Header Info */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-slate-800/80 gap-3">
+              >
+                {/* Header: Role, Tag, Organization, Duration */}
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-6 mb-6 border-b border-warm-border gap-4">
                   <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
+                      <h3 className="font-display font-bold text-xl sm:text-2xl text-warm-dark">
                         {exp.role}
                       </h3>
                       {exp.featuredTag && (
-                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wider font-mono uppercase bg-cyan-50 dark:bg-cyan-950 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800/60 flex items-center space-x-1">
-                          <Sparkles className="w-3 h-3 text-cyan-600 dark:text-cyan-400" />
-                          <span>{exp.featuredTag}</span>
+                        <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 bg-orange text-white">
+                          {exp.featuredTag}
                         </span>
                       )}
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-3 text-xs font-medium">
-                      <span className="flex items-center text-teal-700 dark:text-teal-300 font-semibold">
-                        <Building2 className="w-3.5 h-3.5 mr-1" />
+                    <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-mono text-warm-muted">
+                      <span className="flex items-center text-warm-dark font-semibold">
+                        <Building2 className="w-3.5 h-3.5 mr-1.5 text-orange" />
                         {exp.organization}
                       </span>
-                      <span className="text-slate-400">•</span>
-                      <span className="flex items-center text-slate-500 dark:text-slate-400">
-                        <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
+                      <span>&middot;</span>
+                      <span className="flex items-center">
+                        <MapPin className="w-3.5 h-3.5 mr-1" />
                         {exp.location}
                       </span>
                     </div>
                   </div>
 
-                  {/* Period Badge */}
-                  <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700/80 text-xs font-mono text-cyan-800 dark:text-cyan-400 w-fit">
-                    <Calendar className="w-3.5 h-3.5" />
+                  <div className="font-mono text-xs sm:text-sm px-3.5 py-1.5 bg-warm-bg border border-warm-border text-warm-dark self-start lg:self-center flex items-center space-x-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-orange" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
 
-                {/* Bullets Grounded in CV */}
-                <ul className="space-y-3 mb-5">
+                {/* Bullets Grounded in Prompt */}
+                <ul className="space-y-3 mb-6">
                   {exp.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-start space-x-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-normal">
-                      <CheckCircle2 className="w-4 h-4 text-teal-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{bullet}</span>
+                    <li
+                      key={bIdx}
+                      className="text-sm sm:text-base text-warm-dark/85 flex items-start space-x-2.5 leading-relaxed font-light"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-orange flex-shrink-0 mt-1" />
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Technology Tags */}
-                <div className="pt-3 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-2">
-                  <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 mr-1">Stack:</span>
+                {/* Tech Tags */}
+                <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-warm-border">
+                  <span className="font-mono text-xs text-warm-muted mr-1">Stack:</span>
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300"
+                      className="font-mono text-xs px-2.5 py-0.5 bg-warm-bg border border-warm-border text-warm-dark"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

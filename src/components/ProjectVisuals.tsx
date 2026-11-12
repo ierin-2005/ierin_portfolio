@@ -1,40 +1,40 @@
 import React from 'react';
-import { Shield, AlertTriangle, Wifi, Smartphone, Database, Hash } from 'lucide-react';
+import { Shield, AlertTriangle, Smartphone, Database, Hash, Activity } from 'lucide-react';
 
 export const BlockchainVisual: React.FC = () => {
   return (
-    <div className="relative w-full min-h-[175px] sm:aspect-[16/9] rounded-xl bg-[#090d19] border border-slate-800 p-3.5 sm:p-4 flex flex-col justify-between overflow-hidden group-hover:border-cyan-500/40 transition-colors">
-      <div className="flex items-center justify-between text-xs border-b border-slate-800/80 pb-2">
-        <span className="font-mono text-cyan-400 text-[11px] flex items-center space-x-1">
-          <Hash className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-          <span className="truncate">SHA-256 CHAIN OF CUSTODY</span>
+    <div className="relative w-full aspect-[16/9] bg-[#141414] border border-[#2A2A2A] p-4 sm:p-5 flex flex-col justify-between overflow-hidden group-hover:border-orange/60 transition-colors">
+      <div className="flex items-center justify-between text-xs border-b border-[#2A2A2A] pb-2.5">
+        <span className="font-mono text-orange text-[11px] flex items-center space-x-1.5 uppercase font-bold">
+          <Hash className="w-3.5 h-3.5 text-orange flex-shrink-0" />
+          <span>SHA-256 Chain of Custody</span>
         </span>
-        <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40 flex-shrink-0">
-          AUDIT VALID
+        <span className="text-[10px] font-mono text-white/90 bg-white/10 px-2 py-0.5 border border-white/20">
+          LEDGER VALID
         </span>
       </div>
 
-      <div className="grid grid-cols-3 gap-1.5 sm:gap-2 my-auto py-2">
-        <div className="p-1.5 sm:p-2 rounded-lg bg-slate-900/90 border border-slate-700/60 text-center">
-          <span className="block text-[9px] font-mono text-slate-400">Block #01</span>
-          <span className="text-[9px] sm:text-[10px] font-mono text-slate-300 truncate block">a7f9...4b21</span>
-          <span className="text-[9px] text-teal-400 font-mono mt-1 block">GENESIS</span>
+      <div className="grid grid-cols-3 gap-2 my-auto py-2">
+        <div className="p-2 bg-[#1C1C1C] border border-[#2E2E2E] text-center">
+          <span className="block text-[9px] font-mono text-white/40 uppercase">Block #01</span>
+          <span className="text-[10px] font-mono text-white/90 truncate block mt-0.5">8f2c...4a91</span>
+          <span className="text-[9px] text-white/50 font-mono mt-1 block">GENESIS</span>
         </div>
-        <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-950/40 border border-cyan-800/60 text-center">
-          <span className="block text-[9px] font-mono text-cyan-400">Block #02</span>
-          <span className="text-[9px] sm:text-[10px] font-mono text-cyan-200 truncate block">e3c8...1d09</span>
-          <span className="text-[9px] text-cyan-400 font-mono mt-1 block">VERIFIED</span>
+        <div className="p-2 bg-[#222222] border border-orange/40 text-center shadow-[0_0_15px_rgba(241,90,41,0.15)]">
+          <span className="block text-[9px] font-mono text-orange uppercase font-bold">Block #02</span>
+          <span className="text-[10px] font-mono text-white truncate block mt-0.5">e3b1...7f04</span>
+          <span className="text-[9px] text-orange font-mono mt-1 block font-bold">VERIFIED</span>
         </div>
-        <div className="p-1.5 sm:p-2 rounded-lg bg-slate-900/90 border border-slate-700/60 text-center">
-          <span className="block text-[9px] font-mono text-slate-400">Block #03</span>
-          <span className="text-[9px] sm:text-[10px] font-mono text-slate-300 truncate block">99b2...f88a</span>
-          <span className="text-[9px] text-teal-400 font-mono mt-1 block">LOCKED</span>
+        <div className="p-2 bg-[#1C1C1C] border border-[#2E2E2E] text-center">
+          <span className="block text-[9px] font-mono text-white/40 uppercase">Block #03</span>
+          <span className="text-[10px] font-mono text-white/90 truncate block mt-0.5">99c4...2d18</span>
+          <span className="text-[9px] text-white/50 font-mono mt-1 block">IMMUTABLE</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80">
-        <span>Tamper Detection: Active</span>
-        <span className="text-cyan-400">Audit: Continuous</span>
+      <div className="flex items-center justify-between text-[11px] font-mono text-white/40 pt-2.5 border-t border-[#2A2A2A]">
+        <span>Tamper-evident logs</span>
+        <span className="text-orange font-semibold">Continuous Audit</span>
       </div>
     </div>
   );
@@ -42,37 +42,42 @@ export const BlockchainVisual: React.FC = () => {
 
 export const FraudDetectionVisual: React.FC = () => {
   return (
-    <div className="relative w-full min-h-[175px] sm:aspect-[16/9] rounded-xl bg-[#090d19] border border-slate-800 p-3.5 sm:p-4 flex flex-col justify-between overflow-hidden group-hover:border-teal-500/40 transition-colors">
-      <div className="flex items-center justify-between text-xs border-b border-slate-800/80 pb-2">
-        <span className="font-mono text-teal-400 text-[11px] flex items-center space-x-1">
-          <Shield className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
-          <span className="truncate">ACCESSIBLE FRAUD SCANNER</span>
+    <div className="relative w-full aspect-[16/9] bg-[#141414] border border-[#2A2A2A] p-4 sm:p-5 flex flex-col justify-between overflow-hidden group-hover:border-orange/60 transition-colors">
+      <div className="flex items-center justify-between text-xs border-b border-[#2A2A2A] pb-2.5">
+        <span className="font-mono text-orange text-[11px] flex items-center space-x-1.5 uppercase font-bold">
+          <Shield className="w-3.5 h-3.5 text-orange flex-shrink-0" />
+          <span>Heuristic URL Scanner</span>
         </span>
-        <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40 flex-shrink-0">
+        <span className="text-[10px] font-mono text-white/90 bg-white/10 px-2 py-0.5 border border-white/20">
           HEURISTICS
         </span>
       </div>
 
       <div className="my-auto space-y-2 py-1">
-        <div className="p-2 sm:p-2.5 rounded-lg bg-slate-950/80 border border-rose-900/40 flex flex-wrap items-center justify-between gap-1.5">
-          <div className="flex items-center space-x-2 min-w-0 max-w-[200px] sm:max-w-none">
-            <AlertTriangle className="w-4 h-4 text-rose-400 flex-shrink-0" />
-            <span className="text-xs font-mono text-slate-300 truncate">suspicious-bank-login.biz</span>
+        <div className="p-2 sm:p-2.5 bg-[#1C1C1C] border border-rose-900/50 flex items-center justify-between gap-2">
+          <div className="flex items-center space-x-2 min-w-0">
+            <AlertTriangle className="w-4 h-4 text-rose-500 flex-shrink-0" />
+            <span className="text-xs font-mono text-white/90 truncate">suspicious-banking-verify.biz</span>
           </div>
-          <span className="text-[10px] font-bold text-rose-400 bg-rose-950/80 px-2 py-0.5 rounded border border-rose-800/60 whitespace-nowrap">
-            PHISHING FLAGGED
+          <span className="text-[10px] font-mono uppercase bg-rose-500/20 text-rose-400 px-2 py-0.5 border border-rose-500/40 font-bold whitespace-nowrap">
+            FLAGGED PHISHING
           </span>
         </div>
 
-        <div className="p-2 rounded-lg bg-slate-900/60 border border-slate-800 text-[10px] sm:text-[11px] text-slate-300 flex items-center justify-between">
-          <span>Non-technical Plain Warning:</span>
-          <span className="text-emerald-400 font-medium">Simplified UI Alert</span>
+        <div className="p-2 sm:p-2.5 bg-[#1C1C1C] border border-white/10 flex items-center justify-between gap-2">
+          <div className="flex items-center space-x-2 min-w-0">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+            <span className="text-xs font-mono text-white/70 truncate">official-portal.edu.in</span>
+          </div>
+          <span className="text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-400 px-2 py-0.5 border border-emerald-500/20 whitespace-nowrap">
+            AUTHENTIC
+          </span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80">
-        <span>Elderly Usability Mode</span>
-        <span className="text-teal-400">Zero Technical Jargon</span>
+      <div className="flex items-center justify-between text-[11px] font-mono text-white/40 pt-2.5 border-t border-[#2A2A2A]">
+        <span>Visual clarity alert system</span>
+        <span className="text-orange">Accessibility Focused</span>
       </div>
     </div>
   );
@@ -80,38 +85,44 @@ export const FraudDetectionVisual: React.FC = () => {
 
 export const SmartIvVisual: React.FC = () => {
   return (
-    <div className="relative w-full min-h-[175px] sm:aspect-[16/9] rounded-xl bg-[#090d19] border border-slate-800 p-3.5 sm:p-4 flex flex-col justify-between overflow-hidden group-hover:border-indigo-500/40 transition-colors">
-      <div className="flex items-center justify-between text-xs border-b border-slate-800/80 pb-2">
-        <span className="font-mono text-indigo-400 text-[11px] flex items-center space-x-1">
-          <Wifi className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
-          <span className="truncate">IOT LOAD-CELL TELEMETRY</span>
+    <div className="relative w-full aspect-[16/9] bg-[#141414] border border-[#2A2A2A] p-4 sm:p-5 flex flex-col justify-between overflow-hidden group-hover:border-orange/60 transition-colors">
+      <div className="flex items-center justify-between text-xs border-b border-[#2A2A2A] pb-2.5">
+        <span className="font-mono text-orange text-[11px] flex items-center space-x-1.5 uppercase font-bold">
+          <Activity className="w-3.5 h-3.5 text-orange flex-shrink-0" />
+          <span>Telemetry Fluid Sensing</span>
         </span>
-        <span className="text-[10px] font-mono text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/40 flex-shrink-0">
-          PROTOTYPE
+        <span className="text-[10px] font-mono text-white/90 bg-white/10 px-2 py-0.5 border border-white/20">
+          IIT PALAKKAD
         </span>
       </div>
 
-      <div className="my-auto flex items-center justify-around py-2">
-        <div className="flex flex-col items-center">
-          <div className="w-10 h-10 rounded-full bg-indigo-950/80 border border-indigo-500/50 flex items-center justify-center text-indigo-300 mb-1">
-            <span className="text-xs font-bold font-mono">18%</span>
+      <div className="my-auto py-2 flex items-center justify-between gap-4">
+        {/* Sensor gauge bar */}
+        <div className="flex-1 space-y-2">
+          <div className="flex items-center justify-between text-xs font-mono">
+            <span className="text-white/70">Fluid Reservoir Level</span>
+            <span className="text-orange font-bold">18% (DEPLETING)</span>
           </div>
-          <span className="text-[10px] font-mono text-slate-400">Fluid Level</span>
+          <div className="h-3 w-full bg-[#222222] border border-[#333333] overflow-hidden p-0.5">
+            <div className="h-full bg-orange w-[18%] transition-all" />
+          </div>
+          <div className="text-[10px] font-mono text-white/40 flex justify-between">
+            <span>Critical Threshold: 20%</span>
+            <span className="text-rose-400 font-bold">ALARM ACTIVE</span>
+          </div>
         </div>
 
-        <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-indigo-500 to-amber-500" />
-
-        <div className="p-2 sm:p-2.5 rounded-lg bg-slate-900/90 border border-slate-700/60 text-center">
-          <span className="block text-[10px] font-mono text-amber-400 font-semibold">
-            ALERT THRESHOLD
-          </span>
-          <span className="text-[10px] sm:text-[11px] text-slate-300 mt-0.5 block">Microcontroller Signal</span>
+        {/* Load cell readout */}
+        <div className="p-3 bg-[#1C1C1C] border border-[#2E2E2E] text-center min-w-[90px]">
+          <span className="block text-[9px] font-mono text-white/40 uppercase">Load Cell</span>
+          <span className="font-mono text-base font-bold text-white block">92.4 g</span>
+          <span className="text-[9px] font-mono text-orange block mt-0.5">HX711 ADC</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80">
-        <span>Presented: IIT Palakkad</span>
-        <span className="text-indigo-400">KSCSTE Fest</span>
+      <div className="flex items-center justify-between text-[11px] font-mono text-white/40 pt-2.5 border-t border-[#2A2A2A]">
+        <span>KSCSTE Tech Fest Presentation</span>
+        <span className="text-orange">IoT Hardware</span>
       </div>
     </div>
   );
@@ -119,40 +130,36 @@ export const SmartIvVisual: React.FC = () => {
 
 export const CourseAppVisual: React.FC = () => {
   return (
-    <div className="relative w-full min-h-[175px] sm:aspect-[16/9] rounded-xl bg-[#090d19] border border-slate-800 p-3.5 sm:p-4 flex flex-col justify-between overflow-hidden group-hover:border-cyan-500/40 transition-colors">
-      <div className="flex items-center justify-between text-xs border-b border-slate-800/80 pb-2">
-        <span className="font-mono text-cyan-400 text-[11px] flex items-center space-x-1">
-          <Smartphone className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-          <span className="truncate">ANDROID ARCHITECTURE</span>
+    <div className="relative w-full aspect-[16/9] bg-[#141414] border border-[#2A2A2A] p-4 sm:p-5 flex flex-col justify-between overflow-hidden group-hover:border-orange/60 transition-colors">
+      <div className="flex items-center justify-between text-xs border-b border-[#2A2A2A] pb-2.5">
+        <span className="font-mono text-orange text-[11px] flex items-center space-x-1.5 uppercase font-bold">
+          <Smartphone className="w-3.5 h-3.5 text-orange flex-shrink-0" />
+          <span>Android Mobile Client</span>
         </span>
-        <span className="text-[10px] font-mono text-teal-400 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-800/40 flex-shrink-0">
-          NATIVE JAVA
+        <span className="text-[10px] font-mono text-white/90 bg-white/10 px-2 py-0.5 border border-white/20">
+          OFFLINE SQLITE
         </span>
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 my-auto py-1">
-        <div className="p-2 sm:p-2.5 rounded-lg bg-slate-900/80 border border-slate-700/70">
-          <span className="block text-[10px] font-mono text-cyan-300 font-semibold">
-            Multi-Activity Nav
-          </span>
-          <span className="text-[10px] text-slate-400 mt-0.5 block">
-            Intent-driven module flow
-          </span>
+      {/* Screen Frame Mockup */}
+      <div className="my-auto py-1 max-w-[280px] mx-auto w-full border border-[#333333] bg-[#1A1A1A] p-2 space-y-1.5">
+        <div className="flex items-center justify-between pb-1 border-b border-white/10 text-[9px] font-mono text-white/50">
+          <span>Course Modules</span>
+          <Database className="w-3 h-3 text-orange" />
         </div>
-        <div className="p-2 sm:p-2.5 rounded-lg bg-slate-900/80 border border-slate-700/70">
-          <span className="block text-[10px] font-mono text-teal-300 font-semibold flex items-center space-x-1">
-            <Database className="w-3 h-3 text-teal-400 flex-shrink-0" />
-            <span>SQLite Offline</span>
-          </span>
-          <span className="text-[10px] text-slate-400 mt-0.5 block">
-            Persisted favorites cache
-          </span>
+        <div className="p-1.5 bg-[#242424] border-l-2 border-orange flex items-center justify-between text-[10px]">
+          <span className="font-sans font-medium text-white">CS301 &middot; Database Systems</span>
+          <span className="text-[9px] font-mono text-white/40">Cached</span>
+        </div>
+        <div className="p-1.5 bg-[#202020] border-l-2 border-white/20 flex items-center justify-between text-[10px]">
+          <span className="font-sans font-medium text-white/80">CS304 &middot; Compiler Design</span>
+          <span className="text-[9px] font-mono text-white/40">Saved</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80">
-        <span>ICT Academy Kerala</span>
-        <span className="text-cyan-400">Tested APK</span>
+      <div className="flex items-center justify-between text-[11px] font-mono text-white/40 pt-2.5 border-t border-[#2A2A2A]">
+        <span>Multi-Activity Intent Lifecycle</span>
+        <span className="text-orange">Native Java</span>
       </div>
     </div>
   );

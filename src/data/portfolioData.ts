@@ -22,171 +22,120 @@ export const IS_SOCIAL_CONFIGURED = {
 };
 
 export const HERO_DATA: HeroData = {
-  name: 'Ierin P Menachery',
+  name: 'IERIN P MENACHERY',
   initials: 'IPM',
-  headline: 'Building Intelligent Solutions for Real-World Problems.',
-  subHeadline:
-    'Computer Science undergrad specializing in AI/ML, LLMs, and RAG. Built HydroGPT at Larsen & Toubro (L&T) and engineered practical solutions across mobile & IoT.',
-  location: 'Kerala, India',
+  headline: 'I BUILD INTELLIGENT THINGS.',
+  subHeadline: 'AI / MACHINE LEARNING / GENERATIVE AI',
+  description: 'Computer Science undergraduate exploring AI, LLMs and intelligent software solutions.',
+  location: 'KERALA, INDIA',
   email: 'ierinmenachery@gmail.com',
   resumeFileName: 'Ierin_P_Menachery_Resume.pdf',
   profileImage: 'ierin_portrait.jpg',
   highlights: [
     'AI/ML Intern at Larsen & Toubro (L&T)',
-    'Creator of HydroGPT (Hydrology RAG QA System)',
-    'Hands-on across AI/ML, LLMs & Android Apps',
-  ],
-  stats: [
-    { value: '3+', label: 'Internships' },
-    { value: '5+', label: 'Verified Projects' },
-    { value: '10+', label: 'Certifications' },
-    { value: '7.97', label: 'B.Tech CGPA' },
+    'Creator of HydroGPT (Hydrology RAG System)',
+    'Hands-on across AI, Systems & Mobile Engineering',
   ],
 };
 
 export const ABOUT_DATA = {
-  summaryParagraphs: [
-    'Computer Science undergraduate specializing in Machine Learning, Generative AI, and Retrieval-Augmented Generation (RAG). Focused on turning AI models into dependable, practical software.',
-    'Previously AI/ML Intern at Larsen & Toubro (L&T), where I built HydroGPT for engineering teams in Mumbai, Delhi, and Chennai. Experienced across LLMs, Android development, and IoT prototyping.',
+  sectionLabel: '01 / ABOUT ME',
+  heading: 'Curious about intelligence. Driven by creation.',
+  paragraphs: [
+    "I'm a Computer Science undergraduate interested in Artificial Intelligence, Machine Learning, and Generative AI. I enjoy exploring how intelligent systems can solve practical, real-world problems.",
+    'From building domain-specific AI assistants to developing mobile and IoT prototypes, I enjoy turning ideas into working solutions.',
   ],
-  pillars: [
-    {
-      title: 'AI & Machine Learning',
-      description:
-        'Predictive models, neural networks, and evaluation pipelines in Python & Scikit-learn.',
-      icon: 'BrainCircuit',
-    },
-    {
-      title: 'Generative AI & LLMs',
-      description:
-        'Domain RAG pipelines, dense FAISS vector indexing, and quantized local CPU inference (GGUF).',
-      icon: 'Cpu',
-    },
-    {
-      title: 'Software & App Development',
-      description:
-        'Native Android (Java/XML/SQLite), IoT microcontroller integration, and cryptographic security.',
-      icon: 'Layers',
-    },
-  ],
-  quickStats: [
-    { label: 'Degree', value: 'B.Tech CSE', subtext: 'Jyothi Eng. College (CGPA 7.97)' },
-    { label: 'Flagship System', value: 'HydroGPT', subtext: 'Presented to L&T Corporate depts' },
-    { label: 'Internships', value: '3 Completed', subtext: 'L&T, CSEED, ICT Academy' },
-    { label: 'Verified Projects', value: '4 Delivered', subtext: 'AI/ML, Crypto, IoT, Android' },
+  facts: [
+    { label: 'Degree', value: 'B.Tech Computer Science & Engineering' },
+    { label: 'Institution', value: 'Jyothi Engineering College' },
+    { label: 'Period', value: '2023–2027' },
+    { label: 'Academics', value: 'CGPA: 7.97 / 10' },
+    { label: 'Location', value: 'Based in Kerala, India' },
   ],
 };
 
 export const HYDRO_GPT_DATA: HydroGPTProject = {
   id: 'hydro-gpt',
-  title: 'HydroGPT — AI-Powered Hydrology & Flood QA System',
-  tagline:
-    'Enterprise RAG pipeline delivering context-grounded answers from complex hydrology guidelines and flood records.',
+  title: 'HydroGPT',
+  subtitle: 'AI-powered Hydrology & Flood Question Answering System.',
+  tagline: 'A domain-specific AI assistant that retrieves information from technical hydrology documents and generates context-grounded answers.',
+  label: 'AI / LLMs / RAG',
+  highlight: 'Developed during my AI & ML internship at Larsen & Toubro (L&T).',
   year: '2026',
-  role: 'AI/ML Intern',
+  role: 'AI & Machine Learning Intern',
   organization: 'Larsen & Toubro (L&T)',
   location: 'Mumbai, India',
-  duration: 'June 30, 2026 – August 29, 2026',
-  summary:
-    'Developed a domain-specific RAG system answering technical queries from hydrology and structural engineering documents.',
-  presentationContext:
-    "Presented live to L&T's Hydrology and Structural divisions across Mumbai, Delhi, and Chennai.",
+  duration: '30 June 2026 – 29 August 2026',
+  presentationContext: "Presented live to L&T's Hydrology and Structural engineering teams, with participants from Mumbai, Delhi, and Chennai.",
   architectureSteps: [
     {
       id: 'step-1',
-      label: 'Hydrology Docs',
-      subLabel: 'Domain Reports & Data',
-      description:
-        'Ingests flood manuals, catchment logs, and technical engineering guidelines.',
+      label: 'Hydrology Documents',
+      subLabel: 'Domain manuals & flood records',
+      description: 'Ingests complex technical guidelines and catchment reports.',
       iconName: 'FileText',
     },
     {
       id: 'step-2',
-      label: 'Semantic Chunking',
-      subLabel: 'Parsing & Structuring',
-      description:
-        'Cleans and chunks documents while strictly preserving engineering tables and formulas.',
+      label: 'Document Processing',
+      subLabel: 'Chunking & structuring',
+      description: 'Cleans, tokenizes, and segments documents into contextual chunks.',
       iconName: 'Scissors',
     },
     {
       id: 'step-3',
       label: 'Embeddings',
-      subLabel: 'Dense Vector Map',
-      description:
-        'Generates high-dimensional vector representations capturing hydrology terminology.',
+      subLabel: 'Dense vector representation',
+      description: 'Transforms text into mathematical embeddings preserving engineering semantics.',
       iconName: 'Network',
     },
     {
       id: 'step-4',
       label: 'FAISS Retrieval',
-      subLabel: 'Sub-ms Similarity Search',
-      description:
-        'Identifies top-k nearest semantic context chunks with sub-millisecond query latency.',
+      subLabel: 'Similarity indexing',
+      description: 'Retrieves top-k context passages using sub-millisecond vector similarity search.',
       iconName: 'Search',
     },
     {
       id: 'step-5',
-      label: 'Grounding Injection',
-      subLabel: 'Fact Constraint',
-      description:
-        'Constrains the language model with verified domain context to eliminate hallucinations.',
-      iconName: 'ShieldCheck',
+      label: 'LLM Reasoning',
+      subLabel: 'Qwen2.5-3B-Instruct (GGUF)',
+      description: 'Generates context-grounded answers running on local CPU without cloud dependency.',
+      iconName: 'Cpu',
     },
     {
       id: 'step-6',
-      label: 'Local LLM',
-      subLabel: 'Qwen2.5 / GGUF CPU',
-      description:
-        'Qwen2.5-3B optimized via GGUF for private, cost-effective local CPU execution.',
-      iconName: 'Bot',
-    },
-    {
-      id: 'step-7',
-      label: 'Verified Output',
-      subLabel: 'Grounded Answer',
-      description:
-        'Delivers context-aware answers ready for engineering and structural review.',
+      label: 'Grounded Answer',
+      subLabel: 'Context-accurate output',
+      description: 'Delivers factual, domain-constrained responses for engineering review.',
       iconName: 'CheckCircle2',
     },
   ],
   whatIBuilt: [
     {
-      title: 'RAG & Vector Retrieval',
+      title: 'Domain RAG Pipeline',
       points: [
-        'Engineered document ingestion, semantic chunking, and FAISS dense vector search.',
-        'Implemented similarity thresholding to ensure only high-confidence context reaches the model.',
+        'Designed end-to-end retrieval pipeline indexing technical hydrology documents.',
+        'Applied semantic chunking and FAISS dense vector indexing for fast query matching.',
       ],
     },
     {
       title: 'Quantized CPU Inference',
       points: [
-        'Explored Qwen2.5-3B-Instruct fine-tuning with QLoRA parameter adaptation.',
-        'Configured lightweight GGUF format for private, zero-cloud local CPU inference.',
+        'Utilized Qwen2.5-3B-Instruct fine-tuning with QLoRA parameter adaptation.',
+        'Deployed GGUF format for zero-cloud local CPU inference to protect sensitive data.',
       ],
     },
-    {
-      title: 'Enterprise Department Showcase',
-      points: [
-        "Delivered a live demonstration to L&T's Hydrology and Structural engineering divisions.",
-        'Conducted hybrid presentation with remote participation from senior teams in Delhi and Chennai.',
-      ],
-    },
-  ],
-  keyCapabilities: [
-    'Retrieval-Augmented Generation (RAG)',
-    'FAISS Vector Retrieval',
-    'Embeddings & Document Processing',
-    'Local CPU Inference (GGUF)',
-    'Hydrology Knowledge Grounding',
   ],
   technologies: [
     'Python',
-    'Large Language Models (LLMs)',
-    'RAG',
+    'Retrieval-Augmented Generation (RAG)',
     'FAISS',
     'Embeddings',
-    'Qwen2.5-3B',
+    'Qwen2.5-3B-Instruct',
+    'QLoRA',
     'GGUF',
+    'LLMs',
   ],
   isInternalLAndTProject: true,
   repoUrl: undefined,
@@ -196,49 +145,45 @@ export const HYDRO_GPT_DATA: HydroGPTProject = {
 export const OTHER_PROJECTS: ProjectItem[] = [
   {
     id: 'blockchain-chain-of-custody',
-    title: 'Blockchain-Based Chain of Custody System',
+    title: 'Chain of Custody',
+    category: 'Blockchain / Security / Cryptography',
     year: '2026',
-    category: 'Security & Integrity',
-    problem: 'Critical digital records are vulnerable to untracked, unauthorized tampering.',
-    contribution:
-      'Built a cryptographic ledger using SHA-256 hashing to guarantee data integrity and maintain an immutable, tamper-evident audit trail.',
-    technologies: ['Python', 'SHA-256 Hashing', 'Cryptography', 'Audit Logging', 'Data Integrity'],
+    problem: 'Critical evidence logs and digital records are vulnerable to untracked, unauthorized tampering.',
+    contribution: 'A prototype for maintaining digital record integrity through SHA-256 hashing and tamper-evident audit trails.',
+    technologies: ['Python', 'SHA-256', 'Cryptography', 'SQLite', 'Audit Logging'],
     highlight: 'Cryptographic SHA-256 tamper-evident verification',
     isConceptOrPrototype: false,
   },
   {
     id: 'fraud-detection-tool',
-    title: 'Fraud Detection Tool for Non-Technical Users',
+    title: 'Fraud Detection',
+    category: 'Security / Python',
     year: '2026',
-    category: 'Security & Usability',
-    problem: 'Phishing URLs and deceptive digital scams target non-technical users with complex threats.',
-    contribution:
-      'Created an accessible heuristic scanner with plain-language visual alerts and simplified indicators designed for elderly usability.',
-    technologies: ['Python', 'Security Heuristics', 'URL Analysis', 'User-Centered Design'],
-    highlight: 'Designed specifically for elderly and non-technical accessibility',
+    problem: 'Deceptive phishing attacks and malicious links frequently mislead non-technical users.',
+    contribution: 'A simple fraud and phishing detection tool designed to make suspicious URLs easier to understand through accessible alerts.',
+    technologies: ['Python', 'URL Analysis', 'Security Heuristics'],
+    highlight: 'Plain-language heuristic warning system',
     isConceptOrPrototype: false,
   },
   {
     id: 'smart-iv-monitoring',
-    title: 'Smart Intravenous Fluid Monitoring System',
+    title: 'Smart IV Monitoring',
+    category: 'IoT / Embedded Systems',
     year: '2024',
-    category: 'IoT & Embedded Systems',
-    problem: 'Manual hospital IV monitoring risks air embolism when empty bags go unnoticed.',
-    contribution:
-      'Prototyped an automated load-cell telemetry sensor alerting nurses before fluids deplete. Presented at KSCSTE Tech Fest, IIT Palakkad.',
-    technologies: ['IoT Prototyping', 'Load-Cell Sensor', 'Microcontroller', 'Embedded C/C++'],
-    highlight: 'Presented prototype at KSCSTE Tech Fest, IIT Palakkad',
+    problem: 'Manual IV fluid monitoring in hospitals risks dangerous air embolism when fluid depletes.',
+    contribution: 'An IoT prototype that uses load-cell sensing to monitor IV fluid levels and alert when fluid is running low.',
+    technologies: ['IoT', 'Load Cell Sensor', 'Microcontroller', 'Embedded C/C++'],
+    highlight: 'Presented at KSCSTE Tech Fest, IIT Palakkad',
     isConceptOrPrototype: true,
   },
   {
     id: 'course-management-app',
-    title: 'Course Management Android App',
+    title: 'Course Management App',
+    category: 'Android / Mobile Development',
     year: '2024',
-    category: 'Mobile Engineering',
-    problem: 'Students lack a lightweight, offline-capable mobile interface to navigate course modules.',
-    contribution:
-      'Built a native Android app in Java with multi-activity Intent flows and SQLite local persistence for offline course bookmarks.',
-    technologies: ['Java', 'Android Studio', 'XML Layouts', 'SQLite', 'Git'],
+    problem: 'Students require lightweight offline access to syllabus modules and bookmarks.',
+    contribution: 'A native Android application for managing course modules and offline bookmarks.',
+    technologies: ['Java', 'Android Studio', 'XML', 'SQLite'],
     highlight: 'Built during ICT Academy of Kerala internship',
     isConceptOrPrototype: false,
   },
@@ -250,13 +195,12 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: 'AI & Machine Learning Intern',
     organization: 'Larsen & Toubro (L&T)',
     location: 'Mumbai, India',
-    period: '30 Jun 2026 – 29 Aug 2026',
+    period: '30 June 2026 – 29 August 2026',
     bullets: [
-      'Developed HydroGPT, a domain-specific RAG system answering queries over environmental & flood records.',
-      'Integrated dense FAISS vector search with quantized Qwen2.5 for fast local CPU inference.',
-      'Presented system live to L&T engineering divisions across Mumbai, Delhi, and Chennai.',
+      "Developed HydroGPT, a domain-specific RAG-based AI assistant for technical hydrology queries.",
+      "Presented the system to L&T's Hydrology and Structural engineering teams, with participants from Mumbai, Delhi, and Chennai.",
     ],
-    technologies: ['Python', 'LLMs', 'RAG', 'FAISS', 'Qwen2.5-3B', 'Data Preprocessing'],
+    technologies: ['Python', 'RAG', 'FAISS', 'Qwen2.5-3B', 'Embeddings', 'GGUF'],
     featuredTag: 'Flagship Corporate Internship',
   },
   {
@@ -264,170 +208,126 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: 'Python & Single Board Computers Intern',
     organization: 'CSEED',
     location: 'Kerala, India',
-    period: '16 Jun 2025 – 22 Jun 2025',
+    period: '16 June 2025 – 22 June 2025',
     bullets: [
-      'Interfaced Python scripts with single-board microcomputers and sensor peripherals.',
-      'Prototyped IoT data collection pipelines through guided hardware-software labs.',
+      'Worked with Python, single-board computers, sensor peripherals, and introductory IoT prototyping.',
     ],
-    technologies: ['Python', 'Single Board Computers', 'Embedded Systems', 'IoT Prototyping'],
+    technologies: ['Python', 'Single Board Computers', 'Sensors', 'IoT Prototyping'],
   },
   {
     id: 'ict-internship',
     role: 'Android App Development Intern',
     organization: 'ICT Academy of Kerala',
     location: 'Kerala, India',
-    period: 'Jul 2024 – Aug 2024',
+    period: 'July 2024 – August 2024',
     bullets: [
-      'Developed an offline-first Android course management app using Java and SQLite.',
-      'Designed XML interfaces, handled multi-intent flows, and tested APK builds.',
+      'Developed an Android course management application using Java, XML, and SQLite.',
     ],
-    technologies: ['Android Studio', 'Java', 'XML Layouts', 'SQLite', 'Git'],
+    technologies: ['Java', 'Android Studio', 'XML', 'SQLite'],
   },
 ];
 
-export const SKILL_CATEGORIES: SkillCategory[] = [
+export const TOOLKIT_CATEGORIES = [
   {
-    title: 'Generative AI & LLMs',
-    description: 'RAG pipelines, vector retrieval, and quantized inference',
-    icon: 'Sparkles',
-    skills: [
-      'Large Language Models (LLMs)',
-      'Retrieval-Augmented Generation (RAG)',
-      'Prompt Engineering',
-      'FAISS Vector Search',
-      'Embeddings',
-      'Qwen2.5 / GGUF',
-    ],
-  },
-  {
-    title: 'Machine Learning',
-    description: 'Predictive modeling, regression, neural networks, and evaluation',
-    icon: 'Brain',
+    title: 'AI & Generative AI',
+    description: 'LLM architectures, retrieval systems, and vector search',
     skills: [
       'Machine Learning',
-      'Predictive Modeling',
-      'Neural Networks (ANN)',
-      'Data Preprocessing',
-      'Feature Engineering',
-      'Model Evaluation',
+      'Large Language Models',
+      'RAG',
+      'Prompt Engineering',
+      'FAISS',
+      'Embeddings',
+      'Qwen2.5',
+      'GGUF',
     ],
   },
   {
-    title: 'Programming Languages',
-    description: 'Core languages for AI, systems, and application engineering',
-    icon: 'Code2',
-    skills: ['Python', 'Java', 'C', 'C++', 'SQL', 'HTML', 'CSS'],
+    title: 'Programming',
+    description: 'Languages for AI, backend systems, and mobile software',
+    skills: ['Python', 'Java', 'C', 'C++', 'SQL'],
   },
   {
-    title: 'Libraries & Tools',
-    description: 'Data science, numerical computation, and development environments',
-    icon: 'Library',
-    skills: ['NumPy', 'Pandas', 'Scikit-learn', 'PyTorch', 'Git', 'Android Studio', 'Linux'],
+    title: 'Libraries & Frameworks',
+    description: 'Scientific computing, data manipulation, and deep learning',
+    skills: ['PyTorch', 'NumPy', 'Pandas', 'Scikit-learn'],
+  },
+  {
+    title: 'Development Tools',
+    description: 'Version control, operating systems, and development suites',
+    skills: ['Git', 'Linux', 'Android Studio', 'HTML', 'CSS'],
   },
 ];
+
+// Preserved for any legacy components if needed
+export const SKILL_CATEGORIES: SkillCategory[] = TOOLKIT_CATEGORIES.map((cat) => ({
+  title: cat.title,
+  description: cat.description,
+  icon: 'Sparkles',
+  skills: cat.skills,
+}));
 
 export const EDUCATION_DATA: EducationItem[] = [
   {
-    degree: 'B.Tech in Computer Science (Third Year)',
+    degree: 'B.Tech — Computer Science & Engineering',
     institution: 'Jyothi Engineering College',
-    location: 'Thrissur, Kerala',
-    period: 'Aug 2023 – Aug 2027',
+    location: 'Kerala, India',
+    period: '2023–2027',
     score: 'CGPA: 7.97 / 10',
-    details: 'Coursework in AI/ML, Data Structures, Algorithms, DBMS, Operating Systems, and OOP.',
-  },
-  {
-    degree: 'Higher Secondary (Computer Science)',
-    institution: 'Sacred Heart C.G.H.S.',
-    location: 'Thrissur, Kerala',
-    period: '2020 – 2022',
-    score: '96.3%',
-    details: 'Specialization in Computer Science, Mathematics, Physics, and Chemistry.',
-  },
-  {
-    degree: 'Diploma in Computer Application',
-    institution: 'SCOLE Kerala',
-    location: 'Thrissur, Kerala',
-    period: '2020 – 2022',
-    score: 'Grade A+',
-    details: 'Foundational computer applications and practical computing fundamentals.',
+    details: 'Coursework in Artificial Intelligence, Machine Learning, Data Structures, Algorithms, DBMS, and Operating Systems.',
   },
 ];
 
 export const ACHIEVEMENTS_DATA: AchievementItem[] = [
   {
     title: 'State A Grade — IT Presentation',
-    category: 'Academic & Technical',
-    organizer: 'IT Mela (Kerala State)',
-    description: 'Awarded State A Grade for technical demonstration of computer science concepts at the Kerala State IT Mela.',
+    category: 'Technical Presentation',
+    organizer: 'Kerala State IT Mela',
+    description: 'Awarded State A Grade for technical demonstration of computer science concepts.',
     icon: 'Award',
   },
   {
     title: 'District 1st — Fencing & Mountaineering',
-    category: 'Sports & Adventure',
+    category: 'Athletics & Adventure',
     organizer: 'District Athletic Council',
-    description: 'Secured First Place at district level across fencing and mountaineering competitions.',
+    description: 'Secured First Place at the district level across fencing and mountaineering events.',
     icon: 'Mountain',
   },
   {
     title: 'Rajya Puraskar Awardee',
-    category: 'Leadership & Arts',
+    category: 'Leadership & Honor',
     organizer: 'Bharat Scouts & Guides',
-    description: 'Honored with the Rajya Puraskar (Governor’s Award) for leadership and scouting excellence.',
+    description: "Honored with the Governor's Rajya Puraskar award for scouting and leadership.",
     icon: 'Shield',
-  },
-  {
-    title: 'State 2nd — Monoact Performance',
-    category: 'Arts & Culture',
-    organizer: 'Malayala Manorama',
-    description: 'Won Second Prize at the state-wide theatrical competition organized by Malayala Manorama.',
-    icon: 'Drama',
   },
 ];
 
 export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
-    title: 'Sensors and Actuators',
-    issuer: 'NPTEL, IISc Bangalore',
-    score: 'Score: 61%',
-    category: 'Embedded & Hardware',
+    title: 'Foundations of Cryptography',
+    issuer: 'IISc Bangalore (NPTEL)',
+    score: 'Elite Silver (Top 1%)',
+    category: 'Security & Integrity',
   },
   {
-    title: 'Embedded Systems Design',
-    issuer: 'NPTEL, IIT Kharagpur',
-    category: 'Embedded & Hardware',
-  },
-  {
-    title: 'Web Development with AI',
-    issuer: 'Internshala Trainings',
-    score: 'Final Assessment: 81%',
+    title: 'Python for Data Science',
+    issuer: 'IIT Kharagpur (NPTEL)',
+    score: 'Elite Silver',
     category: 'AI & Machine Learning',
   },
   {
-    title: '5-Day AI Agents Intensive Course with Google',
+    title: 'Crash Course on Python',
     issuer: 'Google',
-    year: '2025',
-    category: 'AI & Machine Learning',
+    category: 'Programming',
   },
   {
-    title: 'Artificial Intelligence for All',
+    title: 'Cybersecurity Essentials',
+    issuer: 'Cisco Networking Academy',
+    category: 'Security & Integrity',
+  },
+  {
+    title: 'Generative AI & Modern Computing',
     issuer: 'Infosys Springboard',
-    year: '2025',
     category: 'AI & Machine Learning',
-  },
-  {
-    title: 'Introduction to Modern AI',
-    issuer: 'Cisco Networking Academy',
-    year: '2025',
-    category: 'AI & Machine Learning',
-  },
-  {
-    title: 'Introduction to Data Science',
-    issuer: 'Cisco Networking Academy',
-    category: 'AI & Machine Learning',
-  },
-  {
-    title: 'Introduction to Cybersecurity',
-    issuer: 'Cisco Networking Academy',
-    category: 'Development & Cyber',
   },
 ];

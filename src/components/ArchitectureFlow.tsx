@@ -1,135 +1,171 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   FileText,
-  Scissors,
-  Network,
-  Search,
-  ShieldCheck,
-  Bot,
-  CheckCircle2,
-  ArrowRight,
-  Info,
+  Binary,
+  Layers,
+  Database,
+  Cpu,
+  CheckCircle,
 } from 'lucide-react';
-import { ArchitectureStep } from '../types';
 
-interface ArchitectureFlowProps {
-  steps: ArchitectureStep[];
+interface FlowNode {
+  step: string;
+  title: string;
+  sub: string;
+  desc: string;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
-export const ArchitectureFlow: React.FC<ArchitectureFlowProps> = ({ steps }) => {
-  const [selectedStepId, setSelectedStepId] = useState<string>(steps[0].id);
+const FLOW_NODES: FlowNode[] = [
+  {
+    step: '01',
+    title: 'Hydrology Documents',
+    sub: 'Domain Manuals & Reports',
+    desc: 'Ingests complex technical flood guidelines, catchment reports, and structural manuals.',
+    icon: FileText,
+  },
+  {
+    step: '02',
+    title: 'Document Processing',
+    sub: 'Semantic Chunking',
+    desc: 'Cleans and segments text while strictly preserving engineering tables and formulas.',
+    icon: Layers,
+  },
+  {
+    step: '03',
+    title: 'Embeddings',
+    sub: 'Dense Vector Mapping',
+    desc: 'Transforms parsed segments into high-dimensional vector representations.',
+    icon: Binary,
+  },
+  {
+    step: '04',
+    title: 'FAISS Retrieval',
+    sub: 'Vector Search Index',
+    desc: 'Performs sub-millisecond similarity queries to identify top-k relevant context chunks.',
+    icon: Database,
+  },
+  {
+    step: '05',
+    title: 'LLM Reasoning',
+    sub: 'Qwen2.5-3B (GGUF)',
+    desc: 'Constrains language model reasoning with retrieved context for zero-cloud local execution.',
+    icon: Cpu,
+  },
+  {
+    step: '06',
+    title: 'Verified Answer',
+    sub: 'Grounded Output',
+    desc: 'Produces factual, engineering-ready responses with exact document references.',
+    icon: CheckCircle,
+  },
+];
 
-  const selectedStep = steps.find((s) => s.id === selectedStepId) || steps[0];
-
-  const getStepIcon = (iconName: string, isSelected: boolean) => {
-    const iconClass = `w-5 h-5 ${isSelected ? 'text-cyan-300' : 'text-slate-400'}`;
-    switch (iconName) {
-      case 'FileText':
-        return <FileText className={iconClass} />;
-      case 'Scissors':
-        return <Scissors className={iconClass} />;
-      case 'Network':
-        return <Network className={iconClass} />;
-      case 'Search':
-        return <Search className={iconClass} />;
-      case 'ShieldCheck':
-        return <ShieldCheck className={iconClass} />;
-      case 'Bot':
-        return <Bot className={iconClass} />;
-      case 'CheckCircle2':
-        return <CheckCircle2 className={iconClass} />;
-      default:
-        return <Network className={iconClass} />;
-    }
-  };
+export const ArchitectureFlow: React.FC = () => {
+  const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
-    <div className="w-full rounded-2xl bg-slate-50 dark:bg-[#090e1c] border border-slate-200 dark:border-slate-800 p-5 sm:p-6 my-6 text-left shadow-xl">
-      {/* Title & telemetry badge */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800/80 gap-2">
-        <div className="flex items-center space-x-2">
-          <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
-          <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200">
-            End-to-End System Architecture Flow
+    <div className="w-full bg-[#181818] border border-[#2A2A2A] p-6 sm:p-8 lg:p-10 select-none">
+      {/* Visual Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-[#2A2A2A] gap-4">
+        <div>
+          <span className="font-mono text-xs uppercase tracking-widest text-orange block mb-1">
+            System Architecture &middot; Data Flow
+          </span>
+          <h4 className="font-display font-bold text-lg sm:text-xl text-white">
+            Document Ingestion to Local GGUF Inference
           </h4>
         </div>
-        <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 bg-cyan-100/70 dark:bg-cyan-950/50 px-3 py-1 rounded-full border border-cyan-200 dark:border-cyan-800/40 w-fit">
-          Tap nodes to inspect details · Scroll horizontally to view full flow
-        </span>
+        <div className="font-mono text-xs text-white/50 flex items-center space-x-2">
+          <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
+          <span>Interactive System Pipeline</span>
+        </div>
       </div>
 
-      {/* Interactive Horizontal Flow Grid */}
-      <div className="py-6 overflow-x-auto scrollbar-thin">
-        <div className="flex items-center min-w-[760px] lg:min-w-0 justify-between space-x-2">
-          {steps.map((step, idx) => {
-            const isSelected = selectedStepId === step.id;
-            return (
-              <React.Fragment key={step.id}>
-                {/* Node Box */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedStepId(step.id)}
-                  className={`flex-1 flex flex-col items-center p-3 rounded-xl border text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
-                    isSelected
-                      ? 'bg-cyan-100/80 dark:bg-cyan-950/70 border-cyan-500 dark:border-cyan-400 shadow-md dark:shadow-glow-cyan scale-105 z-10'
-                      : 'bg-white dark:bg-slate-900/80 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/60'
-                  }`}
-                >
-                  <div
-                    className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2 transition-colors ${
-                      isSelected
-                        ? 'bg-cyan-200/50 dark:bg-cyan-500/20 border border-cyan-400/50'
-                        : 'bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60'
-                    }`}
-                  >
-                    {getStepIcon(step.iconName, isSelected)}
-                  </div>
-                  <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 block mb-0.5">
-                    0{idx + 1}
-                  </span>
+      {/* Horizontal Step Pipeline (Scrollable on small screens, grid on large) */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative">
+        {FLOW_NODES.map((node, index) => {
+          const Icon = node.icon;
+          const isSelected = activeStep === index;
+
+          return (
+            <motion.div
+              key={node.step}
+              whileHover={{ y: -3 }}
+              onClick={() => setActiveStep(index)}
+              className={`p-4 border transition-all cursor-pointer flex flex-col justify-between ${
+                isSelected
+                  ? 'bg-[#222222] border-orange shadow-[0_0_20px_rgba(241,90,41,0.2)]'
+                  : 'bg-[#141414] border-[#2A2A2A] hover:border-white/30'
+              }`}
+            >
+              <div>
+                {/* Step badge & icon */}
+                <div className="flex items-center justify-between mb-4">
                   <span
-                    className={`text-xs font-semibold leading-tight line-clamp-2 ${
-                      isSelected ? 'text-cyan-900 dark:text-cyan-200' : 'text-slate-700 dark:text-slate-300'
+                    className={`font-mono text-[11px] font-bold ${
+                      isSelected ? 'text-orange' : 'text-white/40'
                     }`}
                   >
-                    {step.label}
+                    {node.step}
                   </span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400 mt-1 hidden sm:block">
-                    {step.subLabel}
-                  </span>
-                </button>
-
-                {/* Arrow connector between nodes */}
-                {idx < steps.length - 1 && (
-                  <div className="flex-shrink-0 text-slate-400 dark:text-slate-600 px-1">
-                    <ArrowRight className="w-4 h-4" />
+                  <div
+                    className={`p-2 rounded-none ${
+                      isSelected
+                        ? 'bg-orange text-white'
+                        : 'bg-white/5 text-white/60'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
                   </div>
-                )}
-              </React.Fragment>
-            );
-          })}
-        </div>
+                </div>
+
+                <div className="font-display font-bold text-xs sm:text-sm text-white mb-1 leading-snug">
+                  {node.title}
+                </div>
+                <div className="font-mono text-[10px] text-white/50 mb-3 truncate">
+                  {node.sub}
+                </div>
+              </div>
+
+              {/* Indicator line */}
+              <div
+                className={`h-0.5 w-full mt-2 transition-colors ${
+                  isSelected ? 'bg-orange' : 'bg-white/10'
+                }`}
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Detailed Node Inspector Box */}
-      <div className="mt-2 p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-cyan-900/30 flex items-start space-x-4 shadow-sm">
-        <div className="p-2.5 rounded-lg bg-cyan-100/70 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800/50 text-cyan-700 dark:text-cyan-400 flex-shrink-0 mt-0.5">
-          <Info className="w-5 h-5" />
-        </div>
-        <div>
-          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-1.5">
-            <span className="text-xs font-mono uppercase tracking-wider text-cyan-800 dark:text-cyan-400">
-              Active Stage Inspector
+      {/* Detail Inspector Card for Active Node */}
+      <motion.div
+        key={activeStep}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25 }}
+        className="mt-6 p-4 sm:p-5 bg-[#141414] border border-[#2A2A2A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <div className="flex items-center space-x-3.5">
+          <span className="font-mono text-xs px-2.5 py-1 bg-orange/15 border border-orange/40 text-orange font-bold">
+            STAGE {FLOW_NODES[activeStep].step}
+          </span>
+          <div>
+            <span className="font-display font-bold text-sm text-white block">
+              {FLOW_NODES[activeStep].title} &mdash; {FLOW_NODES[activeStep].sub}
             </span>
-            <span className="text-slate-400 dark:text-slate-600 hidden xs:inline">•</span>
-            <span className="text-xs font-semibold text-slate-900 dark:text-white">{selectedStep.label}</span>
-            <span className="text-[11px] text-teal-700 dark:text-teal-400 font-mono">({selectedStep.subLabel})</span>
+            <p className="text-xs sm:text-sm text-white/70 mt-0.5">
+              {FLOW_NODES[activeStep].desc}
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
-            {selectedStep.description}
-          </p>
         </div>
-      </div>
+
+        <div className="font-mono text-[11px] text-white/40 whitespace-nowrap self-end sm:self-center">
+          Step {activeStep + 1} of {FLOW_NODES.length}
+        </div>
+      </motion.div>
     </div>
   );
 };

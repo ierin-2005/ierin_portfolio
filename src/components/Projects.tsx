@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, FolderGit2, AlertCircle } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { OTHER_PROJECTS } from '../data/portfolioData';
 import { FeaturedProject } from './FeaturedProject';
 import {
@@ -27,142 +27,134 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="work"
+      className="py-24 sm:py-32 lg:py-40 bg-warm-bg text-warm-dark relative overflow-hidden border-b border-warm-border"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-start mb-12"
-        >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
-            <span>02 / FEATURED WORK &amp; PROJECTS</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Engineered Systems &amp; <span className="text-gradient">Real Implementations</span>
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            Selected projects demonstrating domain-specific AI, cryptographic data integrity, IoT prototyping, and mobile software engineering.
-          </p>
-        </motion.div>
+        <div className="mb-14 sm:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-3 mb-6"
+          >
+            <span className="w-2.5 h-0.5 bg-orange" />
+            <span className="font-mono text-xs sm:text-sm tracking-widest text-orange uppercase font-bold">
+              02 / SELECTED WORK
+            </span>
+          </motion.div>
 
-        {/* 1. Flagship Marquee Card: HydroGPT */}
-        <div className="mb-14">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-extrabold text-section-heading text-warm-dark tracking-tight"
+          >
+            Things I've <span className="text-orange">built.</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-4 text-base sm:text-lg text-warm-dark/70 max-w-2xl font-light"
+          >
+            Domain AI assistants, cryptographic record integrity, IoT medical telemetry, and native mobile software.
+          </motion.p>
+        </div>
+
+        {/* 1. Flagship Marquee Project: HydroGPT */}
+        <div className="mb-16 sm:mb-24">
           <FeaturedProject />
         </div>
 
-        {/* 2. Grid of Other Projects */}
-        <div className="mt-12">
-          <div className="flex items-center justify-between mb-8 pb-3 border-b border-slate-200 dark:border-slate-800/80">
-            <div className="flex items-center space-x-2">
-              <FolderGit2 className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
-                Additional Technical Projects
-              </h3>
-            </div>
-            <span className="text-xs font-mono text-slate-500 dark:text-slate-400">4 Verified Deliveries</span>
+        {/* 2. Asymmetric Showcase of Additional Projects */}
+        <div className="space-y-12 sm:space-y-16">
+          <div className="flex items-center justify-between pb-4 border-b border-warm-border">
+            <span className="font-mono text-xs text-warm-muted uppercase tracking-wider">
+              Additional Engineered Systems
+            </span>
+            <span className="font-mono text-xs text-orange font-bold">
+              04 Verified Prototypes
+            </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {OTHER_PROJECTS.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                whileHover={{ y: -4 }}
-                className="group relative rounded-2xl glass-panel p-5 sm:p-6 border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-glow-cyan flex flex-col justify-between"
-              >
-                <div>
-                  {/* Top Meta Bar */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/50 px-2.5 py-0.5 rounded-full border border-cyan-200 dark:border-cyan-800/40">
-                      {project.category}
-                    </span>
-                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{project.year}</span>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+            {OTHER_PROJECTS.map((project, idx) => {
+              const projectNumber = `0${idx + 2}`;
 
-                  {/* Project Title */}
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors mb-4">
-                    {project.title}
-                  </h4>
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="group bg-white border border-warm-border p-6 sm:p-8 flex flex-col justify-between shadow-editorial hover:border-orange/60 transition-all duration-300"
+                >
+                  <div>
+                    {/* Project Header: Large Index Number & Category */}
+                    <div className="flex items-start justify-between mb-5">
+                      <span className="font-display font-black text-2xl sm:text-3xl text-warm-muted/40 group-hover:text-orange transition-colors">
+                        {projectNumber}
+                      </span>
+                      <div className="flex items-center space-x-2">
+                        <span className="font-mono text-[11px] text-warm-dark px-2.5 py-0.5 bg-warm-bg border border-warm-border uppercase font-medium">
+                          {project.category}
+                        </span>
+                        <span className="font-mono text-xs text-warm-muted">
+                          {project.year}
+                        </span>
+                      </div>
+                    </div>
 
-                  {/* Project Custom Technical Visual */}
-                  <div className="mb-5">{renderVisual(project.id)}</div>
+                    {/* Title */}
+                    <h4 className="font-display font-bold text-xl sm:text-2xl text-warm-dark group-hover:text-orange transition-colors mb-3">
+                      {project.title}
+                    </h4>
 
-                  {/* Problem Statement */}
-                  <div className="mb-3.5">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
-                      Problem Context
-                    </span>
-                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                      {project.problem}
-                    </p>
-                  </div>
-
-                  {/* Actual Contribution */}
-                  <div className="mb-5">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-teal-700 dark:text-teal-400 block mb-1">
-                      My Contribution
-                    </span>
-                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
+                    {/* Short Description */}
+                    <p className="text-sm sm:text-base text-warm-dark/80 leading-relaxed font-light mb-6">
                       {project.contribution}
                     </p>
-                  </div>
-                </div>
 
-                <div>
-                  {/* Technology Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800/80 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {/* Visual Custom Illustration / Architecture */}
+                    <div className="mb-6">
+                      {renderVisual(project.id)}
+                    </div>
                   </div>
 
-                  {/* Action / Source Link */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
-                    {project.isConceptOrPrototype ? (
-                      <span className="text-[11px] font-mono text-amber-600 dark:text-amber-400/90 flex items-center space-x-1">
-                        <AlertCircle className="w-3.5 h-3.5" />
-                        <span>Engineered Prototype / Research Concept</span>
-                      </span>
-                    ) : (
-                      <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                        {project.highlight}
-                      </span>
-                    )}
+                  <div>
+                    {/* Technologies Tags */}
+                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-warm-border mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="font-mono text-[11px] px-2.5 py-1 bg-warm-bg text-warm-dark border border-warm-border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
 
-                    {project.repoUrl ? (
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-1 text-xs font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source</span>
-                      </a>
-                    ) : (
-                      <span
-                        className="text-[10px] font-mono text-slate-500 dark:text-slate-400"
-                        title="Repository link configurable in src/data/portfolioData.ts"
-                      >
-                        [Repo configurable]
+                    {/* Highlight Footer */}
+                    <div className="flex items-center justify-between pt-2 text-xs font-mono text-warm-muted">
+                      <span>{project.highlight}</span>
+                      <span className="text-orange group-hover:translate-x-1 transition-transform flex items-center space-x-1 font-bold">
+                        <span>VIEW SYSTEM</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
-                    )}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

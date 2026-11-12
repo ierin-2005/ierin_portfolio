@@ -4,309 +4,181 @@ import {
   Mail,
   Copy,
   Check,
-  MapPin,
-  ExternalLink,
   Github,
   Linkedin,
   FileDown,
-  Send,
+  ArrowUpRight,
+  ArrowUp,
 } from 'lucide-react';
-import {
-  HERO_DATA,
-  SOCIAL_LINKS,
-  IS_SOCIAL_CONFIGURED,
-} from '../data/portfolioData';
+import { HERO_DATA, SOCIAL_LINKS } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
-  const [inquiryTopic, setInquiryTopic] = useState<
-    'recruiter' | 'project' | 'general'
-  >('recruiter');
 
-  // Copy the email address to clipboard
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(HERO_DATA.email);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2500);
     } catch {
-      setCopied(false);
-      window.prompt('Copy this email address:', HERO_DATA.email);
+      window.prompt('Copy email:', HERO_DATA.email);
     }
   };
 
-  // Build a Gmail compose URL with the selected inquiry details
-  const getMailtoLink = () => {
-    let subject = 'Regarding Opportunity / Collaboration — Ierin P Menachery';
-    let body =
-      'Hello Ierin,\n\n' +
-      'I reviewed your portfolio and would like to connect with you regarding...\n\n' +
-      'Best regards,';
-
-    if (inquiryTopic === 'recruiter') {
-      subject = 'Engineering Opportunity / Interview Invitation for Ierin';
-      body =
-        'Hi Ierin,\n\n' +
-        'I came across your portfolio and your work on HydroGPT and AI/ML at Larsen & Toubro. ' +
-        'We are interested in discussing an opportunity with our engineering team...\n\n' +
-        'Best regards,';
-    } else if (inquiryTopic === 'project') {
-      subject = 'Technical Collaboration on AI / LLM Project';
-      body =
-        'Hi Ierin,\n\n' +
-        'I saw your work with RAG, FAISS, and Android development and would love to collaborate or discuss ideas on...\n\n' +
-        'Best regards,';
-    }
-
-    const params = new URLSearchParams({
-      view: 'cm',
-      fs: '1',
-      to: HERO_DATA.email,
-      su: subject,
-      body,
-    });
-
-    return `https://mail.google.com/mail/?${params.toString()}`;
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const mailLink = getMailtoLink();
 
   return (
-    <section
+    <footer
       id="contact"
-      className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80"
+      className="relative bg-dark-bg text-white pt-24 sm:pt-36 lg:pt-44 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-12 overflow-hidden border-t border-dark-border"
     >
-      {/* Decorative background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Cinematic Luminous Orange Flare */}
+      <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] h-[350px] rounded-[100%] bg-orange opacity-20 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Section heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
-              <span>08 / GET IN TOUCH</span>
-            </div>
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        {/* Section Label */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center space-x-3 mb-8"
+        >
+          <span className="w-2.5 h-0.5 bg-orange" />
+          <span className="font-mono text-xs sm:text-sm tracking-widest text-orange uppercase font-bold">
+            06 / GET IN TOUCH
+          </span>
+        </motion.div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              Let's Build Something{' '}
-              <span className="text-gradient">Meaningful.</span>
-            </h2>
+        {/* Dramatic Oversized Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-12 sm:mb-16"
+        >
+          <h2 className="font-display font-black text-hero-title tracking-tighter text-white uppercase max-w-5xl">
+            Let's build <br />
+            something <br />
+            <span className="text-orange hover:text-[#FFA07A] transition-colors">
+              intelligent.
+            </span>
+          </h2>
+          <p className="mt-6 sm:mt-8 text-base sm:text-xl text-white/70 max-w-2xl font-light leading-relaxed">
+            Have an interesting project, opportunity, or idea? Let's connect.
+          </p>
+        </motion.div>
 
-            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
-              Open to connecting with engineering leaders, AI/ML teams, and collaborators on challenging technical initiatives.
-            </p>
-          </motion.div>
-
-          {/* Contact card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel border border-slate-200 dark:border-slate-700/80 shadow-2xl"
-          >
-            {/* Inquiry selector */}
-            <div className="mb-8 pb-6 border-b border-slate-200 dark:border-slate-800/80">
-              <span className="block text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 text-center sm:text-left">
-                Select inquiry context to compose an instant email:
+        {/* Massive Interactive Contact Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-[#181818] border border-[#2A2A2A] p-6 sm:p-10 lg:p-12 mb-16 sm:mb-24 shadow-2xl relative overflow-hidden"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div>
+              <span className="font-mono text-xs text-white/50 uppercase tracking-widest block mb-2">
+                DIRECT INBOX
               </span>
-
-              <div className="flex flex-wrap gap-2.5 justify-center sm:justify-start">
-                <button
-                  type="button"
-                  onClick={() => setInquiryTopic('recruiter')}
-                  aria-pressed={inquiryTopic === 'recruiter'}
-                  className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
-                    inquiryTopic === 'recruiter'
-                      ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
-                  }`}
-                >
-                  Recruitment / Role Inquiry
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setInquiryTopic('project')}
-                  aria-pressed={inquiryTopic === 'project'}
-                  className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
-                    inquiryTopic === 'project'
-                      ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
-                  }`}
-                >
-                  AI / Tech Collaboration
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setInquiryTopic('general')}
-                  aria-pressed={inquiryTopic === 'general'}
-                  className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
-                    inquiryTopic === 'general'
-                      ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
-                  }`}
-                >
-                  General Message
-                </button>
-              </div>
+              <a
+                href={`mailto:${HERO_DATA.email}?subject=Opportunity%20/%20Collaboration%20for%20Ierin%20P%20Menachery`}
+                className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white hover:text-orange transition-colors break-all"
+              >
+                {HERO_DATA.email}
+              </a>
             </div>
 
-            {/* Email address and actions */}
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-200 dark:border-slate-800/80">
-              <div className="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto min-w-0">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 flex-shrink-0">
-                  <Mail className="w-6 h-6 sm:w-7 sm:h-7" />
-                </div>
+            {/* Actions: Copy & Direct Send */}
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="inline-flex items-center space-x-2 px-6 py-3.5 sm:py-4 bg-[#222222] border border-[#333333] hover:border-orange text-white font-mono text-xs uppercase tracking-wider transition-all"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4 text-orange" />
+                    <span className="text-orange font-bold">COPIED TO CLIPBOARD</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-white/60" />
+                    <span>COPY EMAIL</span>
+                  </>
+                )}
+              </button>
 
-                <div className="min-w-0">
-                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-0.5">
-                    Direct Email Address
-                  </span>
-
-                  <a
-                    href={mailLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base sm:text-xl font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors break-all"
-                    aria-label={`Compose an email to ${HERO_DATA.email} in Gmail`}
-                  >
-                    {HERO_DATA.email}
-                  </a>
-                </div>
-              </div>
-
-              {/* Copy and send buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto justify-end">
-                <button
-                  type="button"
-                  onClick={copyEmail}
-                  className="min-h-[44px] inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700/80 hover:border-cyan-500/60 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                  title="Copy email to clipboard"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-                      <span className="text-emerald-600 dark:text-emerald-400">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />
-                      <span>Copy Email</span>
-                    </>
-                  )}
-                </button>
-
-                <a
-                  href={mailLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="min-h-[44px] inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 shadow-md shadow-cyan-500/20 hover:-translate-y-0.5 transition-all"
-                  aria-label="Open Gmail to send a message"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message</span>
-                </a>
-              </div>
+              <a
+                href={`mailto:${HERO_DATA.email}?subject=Opportunity%20/%20Collaboration%20for%20Ierin%20P%20Menachery`}
+                className="inline-flex items-center space-x-2 px-7 py-3.5 sm:py-4 bg-orange hover:bg-orange-hover text-white font-mono text-xs uppercase tracking-wider font-bold transition-all shadow-[0_0_20px_rgba(241,90,41,0.3)]"
+              >
+                <Mail className="w-4 h-4" />
+                <span>COMPOSE EMAIL</span>
+              </a>
             </div>
+          </div>
 
-            {/* Location and social profiles */}
-            <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {/* Location */}
-              <div className="flex items-center space-x-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
-                <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
-
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
-                    Location
-                  </span>
-                  <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
-                    {HERO_DATA.location}
-                  </span>
-                </div>
-              </div>
-
-              {/* GitHub */}
+          {/* Social Profiles & Resume Strip */}
+          <div className="mt-8 pt-8 border-t border-[#2A2A2A] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+            <div className="flex items-center space-x-6">
               <a
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors group"
-                aria-label="Visit GitHub profile"
+                className="flex items-center space-x-2 text-white/70 hover:text-orange transition-colors"
               >
-                <div className="flex items-center space-x-3">
-                  <Github className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors flex-shrink-0" />
-
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
-                      GitHub
-                    </span>
-                    <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
-                      {IS_SOCIAL_CONFIGURED.github
-                        ? 'View Profile'
-                        : 'Configurable'}
-                    </span>
-                  </div>
-                </div>
-
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400" />
+                <Github className="w-4 h-4" />
+                <span>GITHUB</span>
+                <ArrowUpRight className="w-3 h-3 text-white/40" />
               </a>
 
-              {/* LinkedIn */}
               <a
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors group"
-                aria-label="Visit LinkedIn profile"
+                className="flex items-center space-x-2 text-white/70 hover:text-orange transition-colors"
               >
-                <div className="flex items-center space-x-3">
-                  <Linkedin className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-[#0a66c2] transition-colors flex-shrink-0" />
-
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
-                      LinkedIn
-                    </span>
-                    <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
-                      {IS_SOCIAL_CONFIGURED.linkedin
-                        ? 'View Profile'
-                        : 'Configurable'}
-                    </span>
-                  </div>
-                </div>
-
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#0a66c2]" />
+                <Linkedin className="w-4 h-4" />
+                <span>LINKEDIN</span>
+                <ArrowUpRight className="w-3 h-3 text-white/40" />
               </a>
             </div>
 
-            {/* Resume download */}
-            <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
-              <span>
-                Looking for an offline version of my verified credentials?
-              </span>
+            <a
+              href={`./${HERO_DATA.resumeFileName}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              download={HERO_DATA.resumeFileName}
+              className="inline-flex items-center space-x-2 text-orange hover:text-white font-bold transition-colors"
+            >
+              <FileDown className="w-4 h-4" />
+              <span>DOWNLOAD OFFICIAL RESUME (PDF)</span>
+            </a>
+          </div>
+        </motion.div>
 
-              <a
-                href={`./${HERO_DATA.resumeFileName}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                download={HERO_DATA.resumeFileName}
-                className="inline-flex items-center space-x-1.5 text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 font-semibold"
-              >
-                <FileDown className="w-4 h-4" />
-                <span>Download Official Resume (PDF)</span>
-              </a>
-            </div>
-          </motion.div>
+        {/* Minimal Footer */}
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/10 font-mono text-xs text-white/40 gap-4">
+          <div>
+            IERIN P MENACHERY &copy; 2026 &middot; Designed &amp; Built with curiosity.
+          </div>
+
+          <button
+            onClick={scrollToTop}
+            type="button"
+            className="group flex items-center space-x-2 text-white/50 hover:text-orange transition-colors focus:outline-none"
+            aria-label="Back to Top"
+          >
+            <span>BACK TO TOP</span>
+            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform text-orange" />
+          </button>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };

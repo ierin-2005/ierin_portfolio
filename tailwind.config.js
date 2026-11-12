@@ -1,55 +1,46 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        background: {
-          dark: '#070a12',
-          card: '#0c1322',
-          subtle: '#111a2e',
-          light: '#f8fafc',
-          lightCard: '#ffffff',
-          lightSubtle: '#f1f5f9',
+        warm: {
+          bg: '#F5F4F0',
+          card: '#FFFFFF',
+          border: '#E5E3DC',
+          muted: '#73726E',
+          dark: '#111111',
         },
-        primary: {
-          DEFAULT: '#06b6d4', // electric cyan
-          hover: '#0891b2',
-          dark: '#0e7490',
-          light: '#22d3ee',
+        dark: {
+          bg: '#111111',
+          surface: '#181818',
+          card: '#1F1F1F',
+          border: '#2A2A2A',
+          muted: '#8E8D8A',
         },
-        accent: {
-          teal: '#14b8a6',
-          indigo: '#6366f1',
-          violet: '#8b5cf6',
-          blue: '#3b82f6',
+        orange: {
+          DEFAULT: '#F15A29',
+          hover: '#D94819',
+          subtle: 'rgba(241, 90, 41, 0.1)',
+          glow: 'rgba(241, 90, 41, 0.35)',
         },
       },
       fontFamily: {
+        display: ['"Space Grotesk"', 'sans-serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        mono: ['"JetBrains Mono"', 'Fira Code', 'monospace'],
       },
       animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float-slow': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
+        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 30s linear infinite',
+        'spin-reverse-slow': 'spin 40s linear infinite reverse',
       },
       boxShadow: {
-        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.3)',
-        'glow-teal': '0 0 25px -5px rgba(20, 184, 166, 0.25)',
-        'glow-indigo': '0 0 25px -5px rgba(99, 102, 241, 0.25)',
+        'orange-glow': '0 0 50px -10px rgba(241, 90, 41, 0.45)',
+        'orange-subtle': '0 4px 20px -2px rgba(241, 90, 41, 0.15)',
+        'editorial': '0 20px 40px -15px rgba(17, 17, 17, 0.07)',
       },
     },
   },
-  plugins: [
-    ({ addVariant }) => {
-      addVariant('light', 'html.light &');
-    },
-  ],
+  plugins: [],
 };

@@ -1,174 +1,114 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BrainCircuit, Cpu, Layers, ShieldCheck, CheckCircle2, Award, Building2, GraduationCap, Sparkles } from 'lucide-react';
+import { ABOUT_DATA } from '../data/portfolioData';
 
 export const About: React.FC = () => {
-  const capabilities = [
-    {
-      title: 'AI & Machine Learning',
-      sub: 'Predictive & Neural Models',
-      icon: BrainCircuit,
-      color: 'cyan',
-      bullets: [
-        'Predictive regression, neural networks (ANN), and feature engineering with Scikit-learn & PyTorch.',
-        'Model evaluation pipelines validated against real domain data and verified end users.',
-      ],
-    },
-    {
-      title: 'Generative AI & LLMs',
-      sub: 'RAG Architecture & Embeddings',
-      icon: Cpu,
-      color: 'teal',
-      bullets: [
-        'Built HydroGPT with dense FAISS vector indexing, prompt engineering & local CPU quantized inference.',
-        'Presented grounded RAG QA pipeline to L&T Hydrology & Structural engineering departments.',
-      ],
-    },
-    {
-      title: 'Software & Mobile Development',
-      sub: 'Android, Java & SQLite',
-      icon: Layers,
-      color: 'indigo',
-      bullets: [
-        'Engineered native Android applications with Java, multi-Activity navigation, and SQLite offline persistence.',
-        'Hands-on experience in APK debugging, responsive UI layouts, and Git version control.',
-      ],
-    },
-    {
-      title: 'IoT & Cryptographic Integrity',
-      sub: 'Sensors & SHA-256 Verification',
-      icon: ShieldCheck,
-      color: 'emerald',
-      bullets: [
-        'Single-board computing & load-cell telemetry presented at IIT Palakkad (KSCSTE Tech Fest).',
-        'Cryptographic audit hashing with SHA-256 to ensure data immutability and tamper detection.',
-      ],
-    },
-  ];
-
-  const highlights = [
-    {
-      icon: Building2,
-      label: 'Corporate ML Delivery',
-      value: 'Larsen & Toubro',
-      desc: 'AI/ML Intern & HydroGPT Creator',
-    },
-    {
-      icon: GraduationCap,
-      label: 'Academic Foundation',
-      value: 'B.Tech CS (3rd Year)',
-      desc: 'CGPA 7.97 / 10 · Jyothi Engg',
-    },
-    {
-      icon: Award,
-      label: 'State Recognition',
-      value: 'State A Grade',
-      desc: 'IT Presentation Mela (Kerala)',
-    },
-    {
-      icon: Sparkles,
-      label: 'Distinguished Honor',
-      value: 'Rajya Puraskar',
-      desc: 'Bharat Scouts & Guides Awardee',
-    },
-  ];
-
   return (
-    <section id="about" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section
+      id="about"
+      className="py-24 sm:py-32 lg:py-40 bg-warm-bg text-warm-dark relative overflow-hidden border-b border-warm-border"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        {/* Section Label */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-start mb-12"
+          className="flex items-center space-x-3 mb-8 sm:mb-12"
         >
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
-            <span>01 / ABOUT ME</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Bridging Theory with <span className="text-gradient">Practical Engineering</span>
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
-            Passionate Computer Science undergraduate focused on building dependable, high-performance software powered by machine learning, generative AI, and verified architectures.
-          </p>
+          <span className="w-2.5 h-0.5 bg-orange" />
+          <span className="font-mono text-xs sm:text-sm tracking-widest text-orange uppercase font-bold">
+            {ABOUT_DATA.sectionLabel}
+          </span>
         </motion.div>
 
-        {/* 4 Visual Capability Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-          {capabilities.map((cap, idx) => {
-            const Icon = cap.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-5 sm:p-6 rounded-2xl bg-white/90 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 shadow-sm hover:shadow-glow-cyan group"
-              >
-                <div className="flex items-center space-x-3.5 mb-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-105 transition-transform flex-shrink-0">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
-                      {cap.title}
-                    </h3>
-                    <span className="text-xs font-mono text-cyan-700 dark:text-cyan-400">
-                      {cap.sub}
+        {/* Main Editorial Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-display font-extrabold text-section-heading text-warm-dark max-w-4xl tracking-tight mb-16 sm:mb-20"
+        >
+          Curious about intelligence.{' '}
+          <span className="text-orange">Driven by creation.</span>
+        </motion.h2>
+
+        {/* Editorial Layout: Text & Facts + Framed Portrait */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Editorial narrative & Key facts */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-10 sm:space-y-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="space-y-6 text-base sm:text-xl text-warm-dark/85 leading-relaxed font-light"
+            >
+              <p>{ABOUT_DATA.paragraphs[0]}</p>
+              <p className="text-warm-dark/70 text-sm sm:text-lg">
+                {ABOUT_DATA.paragraphs[1]}
+              </p>
+            </motion.div>
+
+            {/* Compact Facts Grid (Art-directed key-value table) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="pt-8 border-t border-warm-border"
+            >
+              <span className="font-mono text-[11px] uppercase tracking-widest text-warm-muted block mb-4">
+                Core Profile &middot; Verified Academic Facts
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                {ABOUT_DATA.facts.map((fact) => (
+                  <div key={fact.label} className="pb-3 border-b border-warm-border/60">
+                    <span className="block font-mono text-[11px] text-warm-muted uppercase tracking-wider mb-0.5">
+                      {fact.label}
+                    </span>
+                    <span className="font-display font-bold text-sm sm:text-base text-warm-dark">
+                      {fact.value}
                     </span>
                   </div>
-                </div>
-
-                <ul className="space-y-2">
-                  {cap.bullets.map((b, bIdx) => (
-                    <li key={bIdx} className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 flex items-start space-x-2">
-                      <CheckCircle2 className="w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* 4 Visual Milestone / Highlight Tiles */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"
-        >
-          {highlights.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="p-4 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex items-start space-x-3 shadow-sm hover:border-cyan-500/40 transition-colors"
-              >
-                <div className="p-2.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-600 dark:text-cyan-400 flex-shrink-0">
-                  <Icon className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
-                    {item.label}
-                  </span>
-                  <span className="text-sm font-bold text-slate-900 dark:text-white block mt-0.5">
-                    {item.value}
-                  </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5 leading-tight">
-                    {item.desc}
-                  </span>
-                </div>
+                ))}
               </div>
-            );
-          })}
-        </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Profile Image in Architectural Editorial Frame */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 relative"
+          >
+            {/* Architectural Frame with orange accent edge */}
+            <div className="relative border border-warm-border bg-white p-3 sm:p-4 shadow-editorial">
+              {/* Corner tick marks */}
+              <div className="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-orange" />
+              <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-orange" />
+
+              <div className="relative aspect-[4/5] overflow-hidden bg-warm-bg">
+                <img
+                  src="./ierin_portrait.jpg"
+                  alt="Ierin P Menachery — AI & ML Engineer"
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Photo Caption Strip */}
+              <div className="mt-3 pt-2.5 border-t border-warm-border flex items-center justify-between font-mono text-[10px] text-warm-muted uppercase tracking-wider">
+                <span>IERIN P MENACHERY</span>
+                <span className="text-orange font-bold">CSE // AI &middot; ML</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

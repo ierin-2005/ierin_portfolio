@@ -12,6 +12,7 @@ export interface HeroData {
   initials: string;
   headline: string;
   subHeadline: string;
+  description?: string;
   location: string;
   email: string;
   resumeFileName: string;
@@ -31,20 +32,23 @@ export interface ArchitectureStep {
 export interface HydroGPTProject {
   id: string;
   title: string;
+  subtitle?: string;
   tagline: string;
+  label?: string;
+  highlight?: string;
   year: string;
   role: string;
   organization: string;
   location: string;
   duration: string;
-  summary: string;
+  summary?: string;
   presentationContext: string;
   architectureSteps: ArchitectureStep[];
   whatIBuilt: {
     title: string;
     points: string[];
   }[];
-  keyCapabilities: string[];
+  keyCapabilities?: string[];
   technologies: string[];
   repoUrl?: string;
   demoUrl?: string;
@@ -94,7 +98,7 @@ export interface EducationItem {
 
 export interface AchievementItem {
   title: string;
-  category: 'Academic & Technical' | 'Sports & Adventure' | 'Leadership & Arts' | 'Arts & Culture';
+  category: string;
   organizer: string;
   description: string;
   icon: string;
@@ -105,6 +109,6 @@ export interface CertificationItem {
   issuer: string;
   year?: string;
   score?: string;
-  category: 'AI & Machine Learning' | 'Embedded & Hardware' | 'Development & Cyber';
+  category: string;
   verifyUrl?: string;
 }
