@@ -47,7 +47,7 @@ ierin-portfolio/
 ├── public/
 │   ├── favicon.svg             # Monogram "IPM" vector favicon
 │   ├── og-image.svg            # Open Graph social preview banner (1200x630)
-│   └── Ierin_P_Menachery_Resume.pdf  # Verified resume PDF (773 KB)
+│   └── Ierin_P_Menachery_Resume.pdf  # Verified resume PDF (366 KB)
 ├── src/
 │   ├── components/
 │   │   ├── About.tsx           # Grounded 2-column narrative & 3 core pillars
