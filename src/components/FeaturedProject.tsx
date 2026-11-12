@@ -21,54 +21,54 @@ export const FeaturedProject: React.FC = () => {
       {/* Header Badges */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6 relative z-10">
         <div className="flex flex-wrap items-center gap-2.5">
-          <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/40 text-cyan-300 text-xs font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/40 text-cyan-800 dark:text-cyan-300 text-xs font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
             <span>FEATURED FLAGSHIP SYSTEM</span>
           </span>
 
-          <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-slate-300 text-xs font-medium">
-            <Building2 className="w-3.5 h-3.5 text-teal-400" />
+          <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 text-xs font-medium">
+            <Building2 className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
             <span>Larsen &amp; Toubro (L&amp;T)</span>
           </span>
 
-          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-400 text-xs font-mono">
+          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 text-slate-600 dark:text-slate-400 text-xs font-mono">
             <Calendar className="w-3 h-3" />
             <span>{HYDRO_GPT_DATA.year}</span>
           </span>
         </div>
 
-        <div className="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800/40 flex items-center space-x-1.5">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+        <div className="text-xs font-mono text-cyan-800 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-200 dark:border-cyan-800/40 flex items-center space-x-1.5">
+          <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400 animate-pulse" />
           <span>RAG + Qwen2.5 / GGUF</span>
         </div>
       </div>
 
       {/* Main Title & Tagline */}
       <div className="relative z-10 mb-6">
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
           {HYDRO_GPT_DATA.title}
         </h3>
-        <p className="mt-3 text-base sm:text-lg text-cyan-300/90 font-medium leading-relaxed max-w-4xl">
+        <p className="mt-3 text-base sm:text-lg text-cyan-800 dark:text-cyan-300/90 font-medium leading-relaxed max-w-4xl">
           {HYDRO_GPT_DATA.tagline}
         </p>
       </div>
 
       {/* Enterprise Presentation Callout Box */}
-      <div className="relative z-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900/90 to-cyan-950/40 border border-cyan-800/40 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="relative z-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-100 to-cyan-50 dark:from-slate-900/90 dark:to-cyan-950/40 border border-slate-200 dark:border-cyan-800/40 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-start space-x-3.5">
-          <div className="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-400 flex-shrink-0 mt-0.5">
+          <div className="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-700 dark:text-cyan-400 flex-shrink-0 mt-0.5">
             <Users className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider font-mono">
               Corporate Department Presentation
             </h4>
-            <p className="text-xs sm:text-sm text-slate-300 mt-0.5 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mt-0.5 leading-relaxed">
               {HYDRO_GPT_DATA.presentationContext}
             </p>
           </div>
         </div>
-        <span className="text-[11px] font-mono text-cyan-400 whitespace-nowrap px-2.5 py-1 rounded-lg bg-cyan-950/80 border border-cyan-800/50">
+        <span className="text-[11px] font-mono text-cyan-800 dark:text-cyan-400 whitespace-nowrap px-2.5 py-1 rounded-lg bg-cyan-100/80 dark:bg-cyan-950/80 border border-cyan-200 dark:border-cyan-800/50">
           Mumbai · Delhi · Chennai
         </span>
       </div>
@@ -81,24 +81,24 @@ export const FeaturedProject: React.FC = () => {
       {/* "What I Built" Section */}
       <div className="relative z-10 mt-8">
         <div className="flex items-center space-x-2 mb-4">
-          <span className="w-2 h-2 rounded-full bg-teal-400" />
-          <h4 className="text-lg font-bold text-white tracking-tight">What I Built</h4>
+          <span className="w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400" />
+          <h4 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">What I Built</h4>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {HYDRO_GPT_DATA.whatIBuilt.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100/90 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/40 transition-colors"
+              className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors"
             >
-              <h5 className="text-sm font-bold text-cyan-300 mb-2.5 flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              <h5 className="text-sm font-bold text-cyan-800 dark:text-cyan-300 mb-2.5 flex items-center space-x-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
                 <span>{item.title}</span>
               </h5>
               <ul className="space-y-2">
                 {item.points.map((pt, pIdx) => (
-                  <li key={pIdx} className="text-xs sm:text-sm text-slate-300 flex items-start space-x-2">
-                    <CheckCircle className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5" />
+                  <li key={pIdx} className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 flex items-start space-x-2">
+                    <CheckCircle className="w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{pt}</span>
                   </li>
                 ))}
@@ -109,13 +109,13 @@ export const FeaturedProject: React.FC = () => {
       </div>
 
       {/* Technologies & Deployment Info Footer */}
-      <div className="relative z-10 mt-8 pt-6 border-t border-slate-800/80 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="relative z-10 mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         {/* Tech tags */}
         <div className="flex flex-wrap items-center gap-2">
           {HYDRO_GPT_DATA.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-800/70 border border-slate-700/80 text-cyan-300"
+              className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 text-cyan-800 dark:text-cyan-300"
             >
               {tech}
             </span>
@@ -124,8 +124,8 @@ export const FeaturedProject: React.FC = () => {
 
         {/* Action & Project Status Notice */}
         <div className="flex flex-wrap items-center gap-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-mono text-slate-300 bg-slate-900/90 border border-slate-700/80 max-w-full">
-            <Lock className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-mono text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/80 max-w-full">
+            <Lock className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 flex-shrink-0" />
             <span className="truncate sm:whitespace-normal">L&amp;T Corporate Project (Internal Architecture)</span>
           </div>
 
@@ -141,7 +141,7 @@ export const FeaturedProject: React.FC = () => {
             </a>
           ) : (
             <span
-              className="text-[11px] font-mono text-slate-400"
+              className="text-[11px] font-mono text-slate-500 dark:text-slate-400"
               title="Configurable in src/data/portfolioData.ts"
             >
               [Repo configurable]

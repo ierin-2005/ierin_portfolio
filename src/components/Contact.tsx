@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 lg:py-28 relative border-t border-slate-800/80"
+      className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80"
     >
       {/* Decorative background */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -88,27 +88,27 @@ export const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section heading */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-950/50 border border-cyan-800/50 text-cyan-400 text-xs font-mono mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
               <span>08 / GET IN TOUCH</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Let's Build Something{' '}
               <span className="text-gradient">Meaningful.</span>
             </h2>
 
-            <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
               I'm open to connecting with recruiters, AI/ML teams, developers,
               and people working on interesting technology projects.
             </p>
           </div>
 
           {/* Contact card */}
-          <div className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel border border-slate-700/80 shadow-2xl">
+          <div className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel border border-slate-200 dark:border-slate-700/80 shadow-2xl">
             {/* Inquiry selector */}
-            <div className="mb-8 pb-6 border-b border-slate-800/80">
-              <span className="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-3 text-center sm:text-left">
+            <div className="mb-8 pb-6 border-b border-slate-200 dark:border-slate-800/80">
+              <span className="block text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 text-center sm:text-left">
                 Select inquiry context to compose an instant email:
               </span>
 
@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
                   className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     inquiryTopic === 'recruiter'
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                      : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   Recruitment / Role Inquiry
@@ -133,7 +133,7 @@ export const Contact: React.FC = () => {
                   className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     inquiryTopic === 'project'
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                      : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   AI / Tech Collaboration
@@ -146,7 +146,7 @@ export const Contact: React.FC = () => {
                   className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     inquiryTopic === 'general'
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                      : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                      : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   General Message
@@ -155,14 +155,14 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Email address and actions */}
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-200 dark:border-slate-800/80">
               <div className="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto min-w-0">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 flex-shrink-0">
                   <Mail className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
 
                 <div className="min-w-0">
-                  <span className="text-xs font-mono text-slate-400 block mb-0.5">
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-0.5">
                     Direct Email Address
                   </span>
 
@@ -170,7 +170,7 @@ export const Contact: React.FC = () => {
                     href={mailLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base sm:text-xl font-bold text-white hover:text-cyan-300 transition-colors break-all"
+                    className="text-base sm:text-xl font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors break-all"
                     aria-label={`Compose an email to ${HERO_DATA.email} in Gmail`}
                   >
                     {HERO_DATA.email}
@@ -183,17 +183,17 @@ export const Contact: React.FC = () => {
                 <button
                   type="button"
                   onClick={copyEmail}
-                  className="min-h-[44px] inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-cyan-500/60 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="min-h-[44px] inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700/80 hover:border-cyan-500/60 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-emerald-400" />
-                      <span className="text-emerald-400">Copied!</span>
+                      <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+                      <span className="text-emerald-600 dark:text-emerald-400">Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4 text-slate-400" />
+                      <Copy className="w-4 h-4 text-slate-500 dark:text-slate-400" />
                       <span>Copy Email</span>
                     </>
                   )}
@@ -215,14 +215,14 @@ export const Contact: React.FC = () => {
             {/* Location and social profiles */}
             <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Location */}
-              <div className="flex items-center space-x-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <MapPin className="w-5 h-5 text-teal-400 flex-shrink-0" />
+              <div className="flex items-center space-x-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
 
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                     Location
                   </span>
-                  <span className="text-xs font-semibold text-slate-200">
+                  <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
                     {HERO_DATA.location}
                   </span>
                 </div>
@@ -233,17 +233,17 @@ export const Contact: React.FC = () => {
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 transition-colors group"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors group"
                 aria-label="Visit GitHub profile"
               >
                 <div className="flex items-center space-x-3">
-                  <Github className="w-5 h-5 text-slate-300 group-hover:text-cyan-400 transition-colors flex-shrink-0" />
+                  <Github className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors flex-shrink-0" />
 
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                       GitHub
                     </span>
-                    <span className="text-xs font-semibold text-slate-200">
+                    <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
                       {IS_SOCIAL_CONFIGURED.github
                         ? 'View Profile'
                         : 'Configurable'}
@@ -251,7 +251,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-cyan-400" />
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400" />
               </a>
 
               {/* LinkedIn */}
@@ -259,17 +259,17 @@ export const Contact: React.FC = () => {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 transition-colors group"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors group"
                 aria-label="Visit LinkedIn profile"
               >
                 <div className="flex items-center space-x-3">
-                  <Linkedin className="w-5 h-5 text-slate-300 group-hover:text-[#0a66c2] transition-colors flex-shrink-0" />
+                  <Linkedin className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-[#0a66c2] transition-colors flex-shrink-0" />
 
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block">
                       LinkedIn
                     </span>
-                    <span className="text-xs font-semibold text-slate-200">
+                    <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
                       {IS_SOCIAL_CONFIGURED.linkedin
                         ? 'View Profile'
                         : 'Configurable'}
@@ -282,7 +282,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Resume download */}
-            <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+            <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
               <span>
                 Looking for an offline version of my verified credentials?
               </span>
@@ -292,7 +292,7 @@ export const Contact: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 download={HERO_DATA.resumeFileName}
-                className="inline-flex items-center space-x-1.5 text-cyan-400 hover:text-cyan-300 font-semibold"
+                className="inline-flex items-center space-x-1.5 text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 font-semibold"
               >
                 <FileDown className="w-4 h-4" />
                 <span>Download Official Resume (PDF)</span>

@@ -40,19 +40,19 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 lg:py-28 relative border-t border-slate-800/80">
+    <section id="skills" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-950/50 border border-cyan-800/50 text-cyan-400 text-xs font-mono mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
               <span>04 / TECHNICAL EXPERTISE</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white dark:text-white light:text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Verified Technical <span className="text-gradient">Competencies</span>
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
+            <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
               Categorized proficiencies verified through coursework, project deliveries, and professional internships.
             </p>
           </div>
@@ -65,12 +65,12 @@ export const Skills: React.FC = () => {
               value={filterText}
               onChange={(e) => setFilterText(e.target.value)}
               placeholder="Search skill (e.g. RAG, Python)..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl text-xs bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+              className="w-full pl-10 pr-4 py-2 rounded-xl text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
             />
             {filterText && (
               <button
                 onClick={() => setFilterText('')}
-                className="absolute right-2 top-1/2 -translate-y-1/2 px-2.5 py-1 text-xs text-slate-400 hover:text-white rounded-lg bg-slate-800/80"
+                className="absolute right-2 top-1/2 -translate-y-1/2 px-2.5 py-1 text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg bg-slate-100 dark:bg-slate-800/80"
               >
                 Clear
               </button>
@@ -94,22 +94,22 @@ export const Skills: React.FC = () => {
             return (
               <div
                 key={category.title}
-                className="p-4 sm:p-6 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
+                className="p-4 sm:p-6 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
               >
                 <div>
                   {/* Category Header */}
                   <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-950/60 border border-cyan-800/50 flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800/50 flex items-center justify-center flex-shrink-0 text-cyan-600 dark:text-cyan-400">
                       {getCategoryIcon(category.icon)}
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-white tracking-tight">
+                      <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight">
                         {category.title}
                       </h3>
                     </div>
                   </div>
 
-                  <p className="text-[11px] text-slate-400 mb-4 line-clamp-2">
+                  <p className="text-[11px] text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
                     {category.description}
                   </p>
 
@@ -120,8 +120,8 @@ export const Skills: React.FC = () => {
                         key={skill}
                         className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
                           filterText && skill.toLowerCase().includes(filterText.toLowerCase())
-                            ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-400'
-                            : 'bg-slate-900/90 border border-slate-800/80 text-slate-300 hover:border-slate-700 hover:text-white'
+                            ? 'bg-cyan-100 text-cyan-900 dark:bg-cyan-500/20 dark:text-cyan-200 border border-cyan-400'
+                            : 'bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-900 dark:hover:text-white'
                         }`}
                       >
                         {skill}
@@ -130,9 +130,9 @@ export const Skills: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                <div className="mt-5 pt-3 border-t border-slate-200 dark:border-slate-800/60 flex items-center justify-between text-[10px] font-mono text-slate-500 dark:text-slate-400">
                   <span>{matchedSkills.length} competencies</span>
-                  <span className="text-cyan-400/80">Verified</span>
+                  <span className="text-cyan-700 dark:text-cyan-400/80">Verified</span>
                 </div>
               </div>
             );
@@ -140,15 +140,15 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Website Stack Technical Footnote */}
-        <div className="mt-8 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-400 gap-2">
+        <div className="mt-8 p-4 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-2">
           <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400" />
             <span>
               <strong>Note on Portfolio Implementation:</strong> This website was authored with
               React, TypeScript, Vite, Tailwind CSS, and Framer Motion.
             </span>
           </div>
-          <span className="font-mono text-[11px] text-slate-400">Source verified via CV</span>
+          <span className="font-mono text-[11px] text-slate-500 dark:text-slate-400">Source verified via CV</span>
         </div>
       </div>
     </section>

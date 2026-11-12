@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#070a12]/85 dark:bg-[#070a12]/85 light:bg-white/85 backdrop-blur-md border-b border-slate-800/80 dark:border-slate-800/80 light:border-slate-200/80 shadow-lg shadow-black/20'
+          ? 'bg-white/90 dark:bg-[#070a12]/85 backdrop-blur-md border-b border-slate-200/90 dark:border-slate-800/80 shadow-md shadow-slate-200/50 dark:shadow-black/20'
           : 'bg-transparent border-b border-transparent py-2'
       }`}
     >
@@ -90,17 +90,17 @@ export const Navbar: React.FC = () => {
             className="group flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg p-1"
             aria-label="Ierin P Menachery Homepage"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-slate-900 to-slate-950 dark:from-slate-900 dark:to-slate-950 light:from-slate-100 light:to-slate-200 border border-slate-700/80 group-hover:border-cyan-400/80 shadow-md transition-all duration-300">
-              <span className="font-extrabold text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 group-hover:scale-105 transition-transform">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-950 border border-slate-300 dark:border-slate-700/80 group-hover:border-cyan-500/80 shadow-md transition-all duration-300">
+              <span className="font-extrabold text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-500 group-hover:scale-105 transition-transform">
                 {HERO_DATA.initials}
               </span>
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-2 ring-slate-950 animate-pulse" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-2 ring-white dark:ring-slate-950 animate-pulse" />
             </div>
             <div className="hidden sm:flex flex-col">
-              <span className="font-bold text-sm text-slate-100 dark:text-slate-100 light:text-slate-900 tracking-tight group-hover:text-cyan-400 transition-colors">
+              <span className="font-bold text-sm text-slate-900 dark:text-slate-100 tracking-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                 {HERO_DATA.name}
               </span>
-              <span className="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-600 font-medium">
+              <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
                 AI/ML · Full-Stack
               </span>
             </div>
@@ -116,8 +116,8 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
                     isActive
-                      ? 'text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 shadow-sm'
-                      : 'text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-cyan-300 hover:bg-slate-800/50 dark:hover:bg-slate-800/50 light:hover:bg-slate-100'
+                      ? 'text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-800/50 shadow-sm'
+                      : 'text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-slate-800/50'
                   }`}
                 >
                   {item.name}
@@ -167,7 +167,7 @@ export const Navbar: React.FC = () => {
             onClick={closeMobileMenu}
             aria-hidden="true"
           />
-          <div className="lg:hidden fixed inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto z-50 bg-[#070a12]/95 dark:bg-[#070a12]/95 light:bg-white/95 backdrop-blur-xl border-b border-slate-800/90 dark:border-slate-800/90 light:border-slate-200/90 px-5 sm:px-6 py-5 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-top-4">
+          <div className="lg:hidden fixed inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto z-50 bg-white/95 dark:bg-[#070a12]/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800/90 px-5 sm:px-6 py-5 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-top-4">
             <nav className="flex flex-col space-y-1.5 pb-2">
               {NAV_ITEMS.map((item) => {
                 const isActive = activeSection === item.href.substring(1);
@@ -178,8 +178,8 @@ export const Navbar: React.FC = () => {
                     onClick={closeMobileMenu}
                     className={`min-h-[44px] flex items-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
                       isActive
-                        ? 'text-cyan-400 bg-cyan-950/50 border border-cyan-800/60 font-semibold'
-                        : 'text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-cyan-300 hover:bg-slate-800/60'
+                        ? 'text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/60 font-semibold'
+                        : 'text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-slate-800/60'
                     }`}
                   >
                     {item.name}
@@ -187,7 +187,7 @@ export const Navbar: React.FC = () => {
                 );
               })}
 
-              <div className="pt-4 border-t border-slate-800/80 flex flex-col space-y-3">
+              <div className="pt-4 border-t border-slate-200 dark:border-slate-800/80 flex flex-col space-y-3">
                 <a
                   href={`./${HERO_DATA.resumeFileName}`}
                   target="_blank"
@@ -203,7 +203,7 @@ export const Navbar: React.FC = () => {
                 <a
                   href="#contact"
                   onClick={closeMobileMenu}
-                  className="w-full min-h-[44px] flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white border border-slate-700/80 hover:bg-slate-800/50"
+                  className="w-full min-h-[44px] flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-300 dark:border-slate-700/80 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                 >
                   <span>Get In Touch</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

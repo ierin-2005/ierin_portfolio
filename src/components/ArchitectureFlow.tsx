@@ -44,16 +44,16 @@ export const ArchitectureFlow: React.FC<ArchitectureFlowProps> = ({ steps }) => 
   };
 
   return (
-    <div className="w-full rounded-2xl bg-[#090e1c] dark:bg-[#090e1c] light:bg-slate-900 border border-slate-800 p-5 sm:p-6 my-6 text-left shadow-xl">
+    <div className="w-full rounded-2xl bg-slate-50 dark:bg-[#090e1c] border border-slate-200 dark:border-slate-800 p-5 sm:p-6 my-6 text-left shadow-xl">
       {/* Title & telemetry badge */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800/80 gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800/80 gap-2">
         <div className="flex items-center space-x-2">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200">
+          <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
+          <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200">
             End-to-End System Architecture Flow
           </h4>
         </div>
-        <span className="text-xs font-mono text-cyan-400 bg-cyan-950/50 px-3 py-1 rounded-full border border-cyan-800/40 w-fit">
+        <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 bg-cyan-100/70 dark:bg-cyan-950/50 px-3 py-1 rounded-full border border-cyan-200 dark:border-cyan-800/40 w-fit">
           Tap nodes to inspect details · Scroll horizontally to view full flow
         </span>
       </div>
@@ -71,37 +71,37 @@ export const ArchitectureFlow: React.FC<ArchitectureFlowProps> = ({ steps }) => 
                   onClick={() => setSelectedStepId(step.id)}
                   className={`flex-1 flex flex-col items-center p-3 rounded-xl border text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                     isSelected
-                      ? 'bg-cyan-950/70 border-cyan-400 shadow-glow-cyan scale-105 z-10'
-                      : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-800/60'
+                      ? 'bg-cyan-100/80 dark:bg-cyan-950/70 border-cyan-500 dark:border-cyan-400 shadow-md dark:shadow-glow-cyan scale-105 z-10'
+                      : 'bg-white dark:bg-slate-900/80 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/60'
                   }`}
                 >
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2 transition-colors ${
                       isSelected
-                        ? 'bg-cyan-500/20 border border-cyan-400/50'
-                        : 'bg-slate-800/80 border border-slate-700/60'
+                        ? 'bg-cyan-200/50 dark:bg-cyan-500/20 border border-cyan-400/50'
+                        : 'bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60'
                     }`}
                   >
                     {getStepIcon(step.iconName, isSelected)}
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400 block mb-0.5">
+                  <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 block mb-0.5">
                     0{idx + 1}
                   </span>
                   <span
                     className={`text-xs font-semibold leading-tight line-clamp-2 ${
-                      isSelected ? 'text-cyan-200' : 'text-slate-300'
+                      isSelected ? 'text-cyan-900 dark:text-cyan-200' : 'text-slate-700 dark:text-slate-300'
                     }`}
                   >
                     {step.label}
                   </span>
-                  <span className="text-[10px] text-slate-400 mt-1 hidden sm:block">
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 mt-1 hidden sm:block">
                     {step.subLabel}
                   </span>
                 </button>
 
                 {/* Arrow connector between nodes */}
                 {idx < steps.length - 1 && (
-                  <div className="flex-shrink-0 text-slate-600 px-1">
+                  <div className="flex-shrink-0 text-slate-400 dark:text-slate-600 px-1">
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 )}
@@ -112,20 +112,20 @@ export const ArchitectureFlow: React.FC<ArchitectureFlowProps> = ({ steps }) => 
       </div>
 
       {/* Detailed Node Inspector Box */}
-      <div className="mt-2 p-4 sm:p-5 rounded-xl bg-slate-950/80 border border-cyan-900/30 flex items-start space-x-4">
-        <div className="p-2.5 rounded-lg bg-cyan-950/60 border border-cyan-800/50 text-cyan-400 flex-shrink-0 mt-0.5">
+      <div className="mt-2 p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-200 dark:border-cyan-900/30 flex items-start space-x-4 shadow-sm">
+        <div className="p-2.5 rounded-lg bg-cyan-100/70 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800/50 text-cyan-700 dark:text-cyan-400 flex-shrink-0 mt-0.5">
           <Info className="w-5 h-5" />
         </div>
         <div>
           <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-1.5">
-            <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">
+            <span className="text-xs font-mono uppercase tracking-wider text-cyan-800 dark:text-cyan-400">
               Active Stage Inspector
             </span>
-            <span className="text-slate-600 hidden xs:inline">•</span>
-            <span className="text-xs font-semibold text-white">{selectedStep.label}</span>
-            <span className="text-[11px] text-teal-400 font-mono">({selectedStep.subLabel})</span>
+            <span className="text-slate-400 dark:text-slate-600 hidden xs:inline">•</span>
+            <span className="text-xs font-semibold text-slate-900 dark:text-white">{selectedStep.label}</span>
+            <span className="text-[11px] text-teal-700 dark:text-teal-400 font-mono">({selectedStep.subLabel})</span>
           </div>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             {selectedStep.description}
           </p>
         </div>
