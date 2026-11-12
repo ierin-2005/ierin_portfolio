@@ -23,7 +23,7 @@ export const BackToTop: React.FC = () => {
       onClick={scrollToTop}
       type="button"
       aria-label="Scroll back to top"
-      className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-slate-900/90 dark:bg-slate-900/90 light:bg-white/90 backdrop-blur-md border border-cyan-500/40 text-cyan-400 hover:text-white hover:bg-cyan-500 shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 animate-in fade-in"
+      className="fixed bottom-6 right-4 sm:right-6 z-40 p-3 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full bg-slate-900/90 dark:bg-slate-900/90 light:bg-white/90 backdrop-blur-md border border-cyan-500/40 text-cyan-400 hover:text-white hover:bg-cyan-500 shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 animate-in fade-in"
     >
       <ArrowUp className="w-5 h-5" />
     </button>

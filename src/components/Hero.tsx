@@ -91,11 +91,11 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               {/* Action 1: Explore Projects */}
               <a
                 href="#projects"
-                className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 hover:from-cyan-300 hover:to-teal-200 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 hover:from-cyan-300 hover:to-teal-200 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <span>Explore My Projects</span>
                 <ArrowDown className="w-4 h-4" />
@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 download={HERO_DATA.resumeFileName}
-                className="inline-flex items-center space-x-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-slate-100 dark:text-slate-100 light:text-slate-900 bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/60 hover:-translate-y-0.5 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-slate-100 dark:text-slate-100 light:text-slate-900 bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/60 hover:-translate-y-0.5 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500"
               >
                 <FileDown className="w-4 h-4 text-cyan-400" />
                 <span>Download Resume</span>
@@ -116,19 +116,19 @@ export const Hero: React.FC = () => {
               {/* Action 3: Contact Me */}
               <a
                 href="#contact"
-                className="inline-flex items-center space-x-2 px-5 py-3.5 rounded-xl text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/40 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3.5 rounded-xl text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/40 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500"
               >
                 <Mail className="w-4 h-4" />
                 <span>Contact Me</span>
               </a>
 
               {/* Social Links */}
-              <div className="flex items-center space-x-2 ml-auto sm:ml-2 pt-2 sm:pt-0">
+              <div className="flex items-center space-x-2 pt-1 sm:pt-0">
                 <a
                   href={SOCIAL_LINKS.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/70 border border-slate-800 hover:border-slate-700 transition-all"
+                  className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/70 border border-slate-800 hover:border-slate-700 transition-all"
                   aria-label="GitHub Profile"
                   title={IS_SOCIAL_CONFIGURED.github ? 'View GitHub Profile' : 'Configurable in src/data/portfolioData.ts'}
                 >
@@ -139,7 +139,7 @@ export const Hero: React.FC = () => {
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl text-slate-400 hover:text-[#0a66c2] hover:bg-slate-800/70 border border-slate-800 hover:border-slate-700 transition-all"
+                  className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2.5 rounded-xl text-slate-400 hover:text-[#0a66c2] hover:bg-slate-800/70 border border-slate-800 hover:border-slate-700 transition-all"
                   aria-label="LinkedIn Profile"
                   title={IS_SOCIAL_CONFIGURED.linkedin ? 'View LinkedIn Profile' : 'Configurable in src/data/portfolioData.ts'}
                 >

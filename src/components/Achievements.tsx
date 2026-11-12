@@ -41,7 +41,7 @@ export const Achievements: React.FC = () => {
           {ACHIEVEMENTS_DATA.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan hover:-translate-y-1 group"
+              className="p-4 sm:p-6 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan hover:-translate-y-1 group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

@@ -54,12 +54,12 @@ export const Footer: React.FC = () => {
           </nav>
 
           {/* Social Icons & Back to Top */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <a
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-slate-900 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2.5 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-lg bg-slate-900 hover:text-white hover:bg-slate-800 transition-colors"
               aria-label="GitHub Profile"
             >
               <Github className="w-4 h-4" />
@@ -68,14 +68,14 @@ export const Footer: React.FC = () => {
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-slate-900 hover:text-[#0a66c2] hover:bg-slate-800 transition-colors"
+              className="p-2.5 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-lg bg-slate-900 hover:text-[#0a66c2] hover:bg-slate-800 transition-colors"
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${HERO_DATA.email}`}
-              className="p-2 rounded-lg bg-slate-900 hover:text-cyan-400 hover:bg-slate-800 transition-colors"
+              className="p-2.5 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-lg bg-slate-900 hover:text-cyan-400 hover:bg-slate-800 transition-colors"
               aria-label="Email Contact"
             >
               <Mail className="w-4 h-4" />
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             <button
               onClick={scrollToTop}
               type="button"
-              className="p-2 rounded-lg bg-slate-900 hover:text-cyan-400 hover:bg-slate-800 transition-colors ml-2"
+              className="p-2.5 min-h-[40px] min-w-[40px] flex items-center justify-center rounded-lg bg-slate-900 hover:text-cyan-400 hover:bg-slate-800 transition-colors ml-1"
               aria-label="Back to Top"
               title="Back to Top"
             >

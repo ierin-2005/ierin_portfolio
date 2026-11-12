@@ -7,11 +7,23 @@
     color-scheme: dark;
   }
   
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+  }
+
   html.light {
     color-scheme: light;
   }
 
+  html,
   body {
+    max-width: 100%;
     overflow-x: hidden;
   }
 

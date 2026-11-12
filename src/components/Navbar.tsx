@@ -51,6 +51,27 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll and handle Escape key when mobile menu is open
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
@@ -138,52 +159,59 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu & Backdrop */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bg-[#070a12]/95 dark:bg-[#070a12]/95 light:bg-white/95 backdrop-blur-xl border-b border-slate-800/90 dark:border-slate-800/90 light:border-slate-200/90 px-6 py-6 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-top-4">
-          <nav className="flex flex-col space-y-2">
-            {NAV_ITEMS.map((item) => {
-              const isActive = activeSection === item.href.substring(1);
-              return (
+        <>
+          <div
+            className="lg:hidden fixed inset-0 top-16 bg-black/60 backdrop-blur-sm z-40"
+            onClick={closeMobileMenu}
+            aria-hidden="true"
+          />
+          <div className="lg:hidden fixed inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto z-50 bg-[#070a12]/95 dark:bg-[#070a12]/95 light:bg-white/95 backdrop-blur-xl border-b border-slate-800/90 dark:border-slate-800/90 light:border-slate-200/90 px-5 sm:px-6 py-5 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-top-4">
+            <nav className="flex flex-col space-y-1.5 pb-2">
+              {NAV_ITEMS.map((item) => {
+                const isActive = activeSection === item.href.substring(1);
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className={`min-h-[44px] flex items-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                      isActive
+                        ? 'text-cyan-400 bg-cyan-950/50 border border-cyan-800/60 font-semibold'
+                        : 'text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-cyan-300 hover:bg-slate-800/60'
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                );
+              })}
+
+              <div className="pt-4 border-t border-slate-800/80 flex flex-col space-y-3">
                 <a
-                  key={item.name}
-                  href={item.href}
+                  href={`./${HERO_DATA.resumeFileName}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download={HERO_DATA.resumeFileName}
                   onClick={closeMobileMenu}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                    isActive
-                      ? 'text-cyan-400 bg-cyan-950/50 border border-cyan-800/60 font-semibold'
-                      : 'text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-cyan-300 hover:bg-slate-800/60'
-                  }`}
+                  className="w-full min-h-[44px] flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 shadow-md shadow-cyan-500/20 active:scale-[0.98] transition-transform"
                 >
-                  {item.name}
+                  <FileDown className="w-4 h-4" />
+                  <span>Download Resume (PDF)</span>
                 </a>
-              );
-            })}
 
-            <div className="pt-4 border-t border-slate-800/80 flex flex-col space-y-3">
-              <a
-                href={`./${HERO_DATA.resumeFileName}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                download={HERO_DATA.resumeFileName}
-                onClick={closeMobileMenu}
-                className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 shadow-md shadow-cyan-500/20"
-              >
-                <FileDown className="w-4 h-4" />
-                <span>Download Resume (PDF)</span>
-              </a>
-
-              <a
-                href="#contact"
-                onClick={closeMobileMenu}
-                className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white border border-slate-700/80 hover:bg-slate-800/50"
-              >
-                <span>Get In Touch</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </nav>
-        </div>
+                <a
+                  href="#contact"
+                  onClick={closeMobileMenu}
+                  className="w-full min-h-[44px] flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white border border-slate-700/80 hover:bg-slate-800/50"
+                >
+                  <span>Get In Touch</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </nav>
+          </div>
+        </>
       )}
     </header>
   );

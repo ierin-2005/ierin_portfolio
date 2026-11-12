@@ -54,7 +54,7 @@ export const ArchitectureFlow: React.FC<ArchitectureFlowProps> = ({ steps }) => 
           </h4>
         </div>
         <span className="text-xs font-mono text-cyan-400 bg-cyan-950/50 px-3 py-1 rounded-full border border-cyan-800/40 w-fit">
-          Click nodes to inspect implementation details
+          Tap nodes to inspect details · Scroll horizontally to view full flow
         </span>
       </div>
 
@@ -117,11 +117,11 @@ export const ArchitectureFlow: React.FC<ArchitectureFlowProps> = ({ steps }) => 
           <Info className="w-5 h-5" />
         </div>
         <div>
-          <div className="flex items-center space-x-3 mb-1">
+          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-1.5">
             <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">
               Active Stage Inspector
             </span>
-            <span className="text-slate-600">•</span>
+            <span className="text-slate-600 hidden xs:inline">•</span>
             <span className="text-xs font-semibold text-white">{selectedStep.label}</span>
             <span className="text-[11px] text-teal-400 font-mono">({selectedStep.subLabel})</span>
           </div>

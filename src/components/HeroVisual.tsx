@@ -26,7 +26,7 @@ export const HeroVisual: React.FC = () => {
         </div>
 
         {/* Technical Architecture Canvas */}
-        <div className="relative aspect-[4/3] w-full rounded-xl bg-[#080d19] dark:bg-[#080d19] light:bg-slate-900 border border-slate-800/80 p-4 flex flex-col justify-between overflow-hidden">
+        <div className="relative w-full min-h-[350px] sm:min-h-[330px] sm:aspect-[4/3] rounded-xl bg-[#080d19] dark:bg-[#080d19] light:bg-slate-900 border border-slate-800/80 p-3 sm:p-4 flex flex-col justify-between overflow-hidden">
           {/* Subtle Grid Pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
@@ -125,7 +125,7 @@ export const HeroVisual: React.FC = () => {
             </div>
 
             {/* Simulated Vector Graph representation */}
-            <div className="grid grid-cols-4 gap-2 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
               <div className="p-1.5 rounded-lg bg-cyan-950/40 border border-cyan-800/40">
                 <span className="block text-[9px] font-mono text-slate-400">Flood Hist.</span>
                 <span className="text-xs font-mono font-semibold text-cyan-300">0.941</span>
@@ -202,7 +202,7 @@ export const HeroVisual: React.FC = () => {
               {activeNode === 'embed' && 'FAISS vector space similarity scoring'}
               {activeNode === 'llm' && 'Qwen2.5-3B local CPU inference'}
               {activeNode === 'output' && 'Grounded context-aware response for engineering review'}
-              {!activeNode && 'Hover components to inspect real-time architecture states'}
+              {!activeNode && 'Tap or hover nodes to inspect real-time architecture states'}
             </span>
           </div>
           <span className="text-[11px] font-mono text-slate-400 hidden sm:inline-block">CPU Local Ready</span>

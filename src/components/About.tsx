@@ -60,7 +60,7 @@ export const About: React.FC = () => {
             </h3>
 
             {/* Pillar 1 */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 dark:from-slate-900/90 dark:to-slate-950/90 light:from-white light:to-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition-all duration-300 group shadow-sm hover:shadow-glow-cyan">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 dark:from-slate-900/90 dark:to-slate-950/90 light:from-white light:to-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition-all duration-300 group shadow-sm hover:shadow-glow-cyan">
               <div className="flex items-center space-x-3 mb-2.5">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-105 transition-transform">
                   <BrainCircuit className="w-5 h-5" />
@@ -78,7 +78,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Pillar 2 */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 dark:from-slate-900/90 dark:to-slate-950/90 light:from-white light:to-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-teal-500/50 transition-all duration-300 group shadow-sm hover:shadow-glow-teal">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 dark:from-slate-900/90 dark:to-slate-950/90 light:from-white light:to-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-teal-500/50 transition-all duration-300 group shadow-sm hover:shadow-glow-teal">
               <div className="flex items-center space-x-3 mb-2.5">
                 <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 group-hover:scale-105 transition-transform">
                   <Cpu className="w-5 h-5" />
@@ -96,7 +96,7 @@ export const About: React.FC = () => {
             </div>
 
             {/* Pillar 3 */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 dark:from-slate-900/90 dark:to-slate-950/90 light:from-white light:to-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-indigo-500/50 transition-all duration-300 group shadow-sm hover:shadow-glow-indigo">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 dark:from-slate-900/90 dark:to-slate-950/90 light:from-white light:to-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-indigo-500/50 transition-all duration-300 group shadow-sm hover:shadow-glow-indigo">
               <div className="flex items-center space-x-3 mb-2.5">
                 <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:scale-105 transition-transform">
                   <Layers className="w-5 h-5" />

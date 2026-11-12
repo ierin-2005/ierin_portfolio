@@ -105,7 +105,7 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Contact card */}
-          <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-slate-700/80 shadow-2xl">
+          <div className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel border border-slate-700/80 shadow-2xl">
             {/* Inquiry selector */}
             <div className="mb-8 pb-6 border-b border-slate-800/80">
               <span className="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-3 text-center sm:text-left">
@@ -117,7 +117,7 @@ export const Contact: React.FC = () => {
                   type="button"
                   onClick={() => setInquiryTopic('recruiter')}
                   aria-pressed={inquiryTopic === 'recruiter'}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
+                  className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     inquiryTopic === 'recruiter'
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
                       : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
@@ -130,7 +130,7 @@ export const Contact: React.FC = () => {
                   type="button"
                   onClick={() => setInquiryTopic('project')}
                   aria-pressed={inquiryTopic === 'project'}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
+                  className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     inquiryTopic === 'project'
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
                       : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
@@ -143,7 +143,7 @@ export const Contact: React.FC = () => {
                   type="button"
                   onClick={() => setInquiryTopic('general')}
                   aria-pressed={inquiryTopic === 'general'}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
+                  className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     inquiryTopic === 'general'
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
                       : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
@@ -155,10 +155,10 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Email address and actions */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
-              <div className="flex items-center space-x-4 w-full md:w-auto min-w-0">
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
-                  <Mail className="w-7 h-7" />
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
+              <div className="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto min-w-0">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                  <Mail className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
 
                 <div className="min-w-0">
@@ -170,7 +170,7 @@ export const Contact: React.FC = () => {
                     href={mailLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg sm:text-xl font-bold text-white hover:text-cyan-300 transition-colors break-all"
+                    className="text-base sm:text-xl font-bold text-white hover:text-cyan-300 transition-colors break-all"
                     aria-label={`Compose an email to ${HERO_DATA.email} in Gmail`}
                   >
                     {HERO_DATA.email}
@@ -179,11 +179,11 @@ export const Contact: React.FC = () => {
               </div>
 
               {/* Copy and send buttons */}
-              <div className="flex items-center space-x-3 w-full md:w-auto justify-end">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto justify-end">
                 <button
                   type="button"
                   onClick={copyEmail}
-                  className="flex-1 md:flex-initial inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-cyan-500/60 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="min-h-[44px] inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-cyan-500/60 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
@@ -203,7 +203,7 @@ export const Contact: React.FC = () => {
                   href={mailLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 md:flex-initial inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 shadow-md shadow-cyan-500/20 hover:-translate-y-0.5 transition-all"
+                  className="min-h-[44px] inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 shadow-md shadow-cyan-500/20 hover:-translate-y-0.5 transition-all"
                   aria-label="Open Gmail to send a message"
                 >
                   <Send className="w-4 h-4" />

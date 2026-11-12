@@ -34,7 +34,7 @@ export const Experience: React.FC = () => {
               />
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-7 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 shadow-lg hover:shadow-glow-cyan">
+              <div className="p-4 sm:p-7 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 shadow-lg hover:shadow-glow-cyan">
                 {/* Header Info */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-800/80 gap-3">
                   <div>

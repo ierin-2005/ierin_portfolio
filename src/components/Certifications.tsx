@@ -65,7 +65,7 @@ export const Certifications: React.FC = () => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
+              className={`min-h-[40px] px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                 selectedCategory === cat
                   ? 'bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20'
                   : 'bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800'
@@ -81,7 +81,7 @@ export const Certifications: React.FC = () => {
           {filteredCertifications.map((cert, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
+              className="p-4 sm:p-5 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -102,7 +102,7 @@ export const Certifications: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+              <div className="pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                 {cert.score ? (
                   <span className="text-cyan-300 font-semibold bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-800/40">
                     {cert.score}

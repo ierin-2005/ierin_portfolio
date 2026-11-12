@@ -13,7 +13,7 @@ import { ArchitectureFlow } from './ArchitectureFlow';
 
 export const FeaturedProject: React.FC = () => {
   return (
-    <div className="relative rounded-3xl glass-panel p-6 sm:p-8 lg:p-10 border border-cyan-500/30 shadow-2xl overflow-hidden group">
+    <div className="relative rounded-3xl glass-panel p-5 sm:p-8 lg:p-10 border border-cyan-500/30 shadow-2xl overflow-hidden group">
       {/* Subtle background ambient gradients */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -123,10 +123,10 @@ export const FeaturedProject: React.FC = () => {
         </div>
 
         {/* Action & Project Status Notice */}
-        <div className="flex items-center space-x-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-mono text-slate-300 bg-slate-900/90 border border-slate-700/80">
-            <Lock className="w-3.5 h-3.5 text-amber-400" />
-            <span>L&amp;T Corporate Project (Internal Architecture)</span>
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-mono text-slate-300 bg-slate-900/90 border border-slate-700/80 max-w-full">
+            <Lock className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+            <span className="truncate sm:whitespace-normal">L&amp;T Corporate Project (Internal Architecture)</span>
           </div>
 
           {HYDRO_GPT_DATA.repoUrl ? (

@@ -63,7 +63,7 @@ export const Projects: React.FC = () => {
             {OTHER_PROJECTS.map((project) => (
               <div
                 key={project.id}
-                className="group relative rounded-2xl glass-panel p-6 border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-glow-cyan hover:-translate-y-1 flex flex-col justify-between"
+                className="group relative rounded-2xl glass-panel p-5 sm:p-6 border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-glow-cyan hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Meta Bar */}
@@ -117,7 +117,7 @@ export const Projects: React.FC = () => {
                   </div>
 
                   {/* Action / Source Link */}
-                  <div className="flex items-center justify-between pt-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                     {project.isConceptOrPrototype ? (
                       <span className="text-[11px] font-mono text-amber-400/90 flex items-center space-x-1">
                         <AlertCircle className="w-3.5 h-3.5" />

@@ -25,7 +25,7 @@ export const Education: React.FC = () => {
           {EDUCATION_DATA.map((item, idx) => (
             <div
               key={idx}
-              className={`p-6 sm:p-7 rounded-2xl glass-panel border transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 ${
+              className={`p-4 sm:p-7 rounded-2xl glass-panel border transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 ${
                 idx === 0
                   ? 'border-cyan-500/40 shadow-glow-cyan/50 bg-gradient-to-b from-slate-900/90 to-cyan-950/20'
                   : 'border-slate-800/90 hover:border-slate-700'

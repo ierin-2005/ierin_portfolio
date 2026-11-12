@@ -70,7 +70,7 @@ export const Skills: React.FC = () => {
             {filterText && (
               <button
                 onClick={() => setFilterText('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 hover:text-slate-300"
+                className="absolute right-2 top-1/2 -translate-y-1/2 px-2.5 py-1 text-xs text-slate-400 hover:text-white rounded-lg bg-slate-800/80"
               >
                 Clear
               </button>
@@ -94,7 +94,7 @@ export const Skills: React.FC = () => {
             return (
               <div
                 key={category.title}
-                className="p-5 sm:p-6 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
+                className="p-4 sm:p-6 rounded-2xl glass-panel border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
               >
                 <div>
                   {/* Category Header */}
