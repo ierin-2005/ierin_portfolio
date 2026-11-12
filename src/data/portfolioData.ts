@@ -321,11 +321,6 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     category: 'Programming',
   },
   {
-    title: 'Cybersecurity Essentials',
-    issuer: 'Cisco Networking Academy',
-    category: 'Security & Integrity',
-  },
-  {
     title: 'Generative AI & Modern Computing',
     issuer: 'Infosys Springboard',
     category: 'AI & Machine Learning',
