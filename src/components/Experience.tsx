@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Building2, Calendar, MapPin, CheckCircle2, Sparkles } from 'lucide-react';
 import { EXPERIENCES } from '../data/portfolioData';
 
@@ -7,7 +8,13 @@ export const Experience: React.FC = () => {
     <section id="experience" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-start mb-14"
+        >
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
             <span>03 / INTERNSHIP EXPERIENCE</span>
@@ -18,15 +25,22 @@ export const Experience: React.FC = () => {
           <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
             Hands-on technical contributions across enterprise AI/ML engineering, embedded hardware systems, and mobile software development.
           </p>
-        </div>
+        </motion.div>
 
         {/* Polished Editorial Timeline (Newest First) */}
         <div className="relative pl-6 sm:pl-8 border-l-2 border-slate-300 dark:border-slate-800/90 space-y-12 max-w-4xl">
           {EXPERIENCES.map((exp, idx) => (
-            <div key={exp.id} className="relative group">
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: idx * 0.1 }}
+              className="relative group"
+            >
               {/* Timeline Node Indicator */}
               <div
-                className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${
+                className={`absolute -left-[31px] sm:-left-[39px] top-2 w-5 h-5 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${
                   idx === 0
                     ? 'bg-cyan-500 border-white dark:border-slate-900 shadow-md dark:shadow-glow-cyan ring-4 ring-cyan-500/20'
                     : 'bg-slate-300 dark:bg-slate-800 border-slate-200 dark:border-slate-700 ring-2 ring-slate-200 dark:ring-slate-800'
@@ -34,7 +48,7 @@ export const Experience: React.FC = () => {
               />
 
               {/* Experience Card */}
-              <div className="p-4 sm:p-7 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 shadow-lg hover:shadow-glow-cyan">
+              <div className="p-5 sm:p-7 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 shadow-lg hover:shadow-glow-cyan">
                 {/* Header Info */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-slate-800/80 gap-3">
                   <div>
@@ -93,7 +107,7 @@ export const Experience: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

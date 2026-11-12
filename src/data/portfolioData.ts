@@ -30,10 +30,17 @@ export const HERO_DATA: HeroData = {
   location: 'Kerala, India',
   email: 'ierinmenachery@gmail.com',
   resumeFileName: 'Ierin_P_Menachery_Resume.pdf',
+  profileImage: 'ierin_portrait.jpg',
   highlights: [
     'AI/ML Intern at Larsen & Toubro (L&T)',
     'Creator of HydroGPT (Hydrology RAG QA System)',
     'Hands-on across AI/ML, LLMs & Android Apps',
+  ],
+  stats: [
+    { value: '3+', label: 'Internships' },
+    { value: '5+', label: 'Verified Projects' },
+    { value: '10+', label: 'Certifications' },
+    { value: '7.97', label: 'B.Tech CGPA' },
   ],
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 import { EDUCATION_DATA } from '../data/portfolioData';
 
@@ -7,7 +8,13 @@ export const Education: React.FC = () => {
     <section id="education" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-start mb-12"
+        >
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
             <span>05 / ACADEMIC BACKGROUND</span>
@@ -18,14 +25,19 @@ export const Education: React.FC = () => {
           <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
             Undergraduate Computer Science curriculum combined with strong foundational mathematics and computing credentials.
           </p>
-        </div>
+        </motion.div>
 
         {/* Education Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {EDUCATION_DATA.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className={`p-4 sm:p-7 rounded-2xl glass-panel border transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 ${
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{ y: -4 }}
+              className={`p-5 sm:p-7 rounded-2xl glass-panel border transition-all duration-300 flex flex-col justify-between ${
                 idx === 0
                   ? 'border-cyan-500/40 shadow-md dark:shadow-glow-cyan/50 bg-gradient-to-b from-cyan-50/60 to-white dark:from-slate-900/90 dark:to-cyan-950/20'
                   : 'border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 dark:hover:border-slate-700'
@@ -70,7 +82,7 @@ export const Education: React.FC = () => {
                   </p>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

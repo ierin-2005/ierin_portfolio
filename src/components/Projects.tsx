@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Github, FolderGit2, AlertCircle } from 'lucide-react';
 import { OTHER_PROJECTS } from '../data/portfolioData';
 import { FeaturedProject } from './FeaturedProject';
@@ -29,7 +30,13 @@ export const Projects: React.FC = () => {
     <section id="projects" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-start mb-12"
+        >
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
             <span>02 / FEATURED WORK &amp; PROJECTS</span>
@@ -40,7 +47,7 @@ export const Projects: React.FC = () => {
           <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
             Selected projects demonstrating domain-specific AI, cryptographic data integrity, IoT prototyping, and mobile software engineering.
           </p>
-        </div>
+        </motion.div>
 
         {/* 1. Flagship Marquee Card: HydroGPT */}
         <div className="mb-14">
@@ -60,10 +67,15 @@ export const Projects: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {OTHER_PROJECTS.map((project) => (
-              <div
+            {OTHER_PROJECTS.map((project, idx) => (
+              <motion.div
                 key={project.id}
-                className="group relative rounded-2xl glass-panel p-5 sm:p-6 border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-glow-cyan hover:-translate-y-1 flex flex-col justify-between"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                whileHover={{ y: -4 }}
+                className="group relative rounded-2xl glass-panel p-5 sm:p-6 border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-glow-cyan flex flex-col justify-between"
               >
                 <div>
                   {/* Top Meta Bar */}
@@ -149,7 +161,7 @@ export const Projects: React.FC = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

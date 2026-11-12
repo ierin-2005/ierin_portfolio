@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Sparkles,
   Building2,
@@ -13,7 +14,13 @@ import { ArchitectureFlow } from './ArchitectureFlow';
 
 export const FeaturedProject: React.FC = () => {
   return (
-    <div className="relative rounded-3xl glass-panel p-5 sm:p-8 lg:p-10 border border-cyan-500/30 shadow-2xl overflow-hidden group">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-3xl glass-panel p-5 sm:p-8 lg:p-10 border border-cyan-500/30 shadow-2xl overflow-hidden group"
+    >
       {/* Subtle background ambient gradients */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -78,18 +85,20 @@ export const FeaturedProject: React.FC = () => {
         <ArchitectureFlow steps={HYDRO_GPT_DATA.architectureSteps} />
       </div>
 
-      {/* "What I Built" Section */}
+      {/* Visual System Highlights */}
       <div className="relative z-10 mt-8">
         <div className="flex items-center space-x-2 mb-4">
           <span className="w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400" />
-          <h4 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">What I Built</h4>
+          <h4 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Key Deliverables &amp; Architecture</h4>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {HYDRO_GPT_DATA.whatIBuilt.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors"
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className="p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/40 transition-colors shadow-sm"
             >
               <h5 className="text-sm font-bold text-cyan-800 dark:text-cyan-300 mb-2.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
@@ -103,7 +112,7 @@ export const FeaturedProject: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -149,6 +158,6 @@ export const FeaturedProject: React.FC = () => {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

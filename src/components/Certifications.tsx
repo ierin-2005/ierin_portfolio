@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { CheckCircle2, Search, ExternalLink, Filter } from 'lucide-react';
 import { CERTIFICATIONS_DATA } from '../data/portfolioData';
 
@@ -28,7 +29,13 @@ export const Certifications: React.FC = () => {
     <section id="certifications" className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6"
+        >
           <div>
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
@@ -53,7 +60,7 @@ export const Certifications: React.FC = () => {
               className="w-full pl-10 pr-4 py-2 rounded-xl text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 mb-8">
@@ -79,9 +86,14 @@ export const Certifications: React.FC = () => {
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredCertifications.map((cert, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="p-4 sm:p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              whileHover={{ y: -3 }}
+              className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-slate-800/90 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between hover:shadow-glow-cyan"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -128,7 +140,7 @@ export const Certifications: React.FC = () => {
                   <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">Verified Credential</span>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

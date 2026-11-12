@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Mail,
   Copy,
@@ -11,7 +11,6 @@ import {
   FileDown,
   Send,
 } from 'lucide-react';
-
 import {
   HERO_DATA,
   SOCIAL_LINKS,
@@ -24,12 +23,11 @@ export const Contact: React.FC = () => {
     'recruiter' | 'project' | 'general'
   >('recruiter');
 
-  // Copy the email address to the clipboard.
+  // Copy the email address to clipboard
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(HERO_DATA.email);
       setCopied(true);
-
       window.setTimeout(() => setCopied(false), 2500);
     } catch {
       setCopied(false);
@@ -37,10 +35,9 @@ export const Contact: React.FC = () => {
     }
   };
 
-  // Build a Gmail compose URL with the selected inquiry details.
+  // Build a Gmail compose URL with the selected inquiry details
   const getMailtoLink = () => {
     let subject = 'Regarding Opportunity / Collaboration — Ierin P Menachery';
-
     let body =
       'Hello Ierin,\n\n' +
       'I reviewed your portfolio and would like to connect with you regarding...\n\n' +
@@ -48,7 +45,6 @@ export const Contact: React.FC = () => {
 
     if (inquiryTopic === 'recruiter') {
       subject = 'Engineering Opportunity / Interview Invitation for Ierin';
-
       body =
         'Hi Ierin,\n\n' +
         'I came across your portfolio and your work on HydroGPT and AI/ML at Larsen & Toubro. ' +
@@ -56,7 +52,6 @@ export const Contact: React.FC = () => {
         'Best regards,';
     } else if (inquiryTopic === 'project') {
       subject = 'Technical Collaboration on AI / LLM Project';
-
       body =
         'Hi Ierin,\n\n' +
         'I saw your work with RAG, FAISS, and Android development and would love to collaborate or discuss ideas on...\n\n' +
@@ -81,13 +76,19 @@ export const Contact: React.FC = () => {
       id="contact"
       className="py-20 lg:py-28 relative border-t border-slate-200 dark:border-slate-800/80"
     >
-      {/* Decorative background */}
+      {/* Decorative background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section heading */}
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800/50 text-cyan-800 dark:text-cyan-400 text-xs font-mono mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400" />
               <span>08 / GET IN TOUCH</span>
@@ -99,13 +100,18 @@ export const Contact: React.FC = () => {
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
-              I'm open to connecting with recruiters, AI/ML teams, developers,
-              and people working on interesting technology projects.
+              Open to connecting with engineering leaders, AI/ML teams, and collaborators on challenging technical initiatives.
             </p>
-          </div>
+          </motion.div>
 
           {/* Contact card */}
-          <div className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel border border-slate-200 dark:border-slate-700/80 shadow-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel border border-slate-200 dark:border-slate-700/80 shadow-2xl"
+          >
             {/* Inquiry selector */}
             <div className="mb-8 pb-6 border-b border-slate-200 dark:border-slate-800/80">
               <span className="block text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 text-center sm:text-left">
@@ -298,7 +304,7 @@ export const Contact: React.FC = () => {
                 <span>Download Official Resume (PDF)</span>
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

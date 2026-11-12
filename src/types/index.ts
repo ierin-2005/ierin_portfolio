@@ -15,7 +15,9 @@ export interface HeroData {
   location: string;
   email: string;
   resumeFileName: string;
+  profileImage?: string;
   highlights: string[];
+  stats?: { label: string; value: string }[];
 }
 
 export interface ArchitectureStep {
