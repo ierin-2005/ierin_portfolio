@@ -1,11 +1,19 @@
 # Ierin P Menachery — Portfolio
 
-A responsive, recruiter-focused portfolio highlighting AI/ML work, internships, selected projects and education. The interface uses motion-based section reveals, subtle floating elements, animated workflow details and responsive navigation. No emoji assets are used.
+A responsive, editorial-style portfolio built with React, TypeScript, Vite and Framer Motion.
+
+## Design direction
+
+- High-contrast charcoal and warm-paper palette with a restrained vermilion accent
+- Large editorial typography, narrow section markers and asymmetric project layouts
+- Scroll-triggered reveals, parallax portrait, continuous focus marquee and animated project diagrams
+- Reduced-motion support and responsive navigation
+- No emoji or stock illustration dependencies
 
 ## Run locally
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -16,24 +24,8 @@ npm run build
 npm run preview
 ```
 
-## Update content
+## Deploy
 
-Edit `src/data/portfolioData.ts` to update profile details, social links, education, skills, internships, projects and recognition.
+The included GitHub Actions workflow builds the site and deploys the `dist` directory to GitHub Pages whenever changes are pushed to `main`.
 
-## Important files
-
-- `public/Ierin_P_Menachery_Resume.pdf` — downloadable résumé
-- `public/ierin_portrait.jpg` — profile portrait
-- `src/App.tsx` — sections, navigation and interactions
-- `src/index.css` — visual design, responsive layout and animations
-- `vite.config.ts` — relative asset paths for GitHub Pages
-- `.github/workflows/deploy.yml` — automatic GitHub Pages deployment
-
-## Deploy to the existing GitHub Pages site
-
-1. Extract the ZIP.
-2. Copy the contents of the `ierin_portfolio` folder into the existing cloned repository, replacing files but preserving the repository's `.git` folder.
-3. Commit and push to `main`.
-4. In GitHub, confirm **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-
-The configured site URL is `https://ierin-2005.github.io/ierin_portfolio/`.
+The project uses relative asset paths so it works under the repository Pages path: `https://ierin-2005.github.io/ierin_portfolio/`.
