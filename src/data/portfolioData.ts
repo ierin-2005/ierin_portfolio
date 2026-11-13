@@ -302,27 +302,39 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
   },
 ];
 
+
 export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
-    title: 'Foundations of Cryptography',
-    issuer: 'IISc Bangalore (NPTEL)',
-    score: 'Elite Silver (Top 1%)',
-    category: 'Security & Integrity',
-  },
-  {
-    title: 'Python for Data Science',
-    issuer: 'IIT Kharagpur (NPTEL)',
-    score: 'Elite Silver',
-    category: 'AI & Machine Learning',
-  },
-  {
-    title: 'Crash Course on Python',
+    title: '5-Day AI Agents Intensive Course',
     issuer: 'Google',
-    category: 'Programming',
+    year: '2025',
+    category: 'AI & Machine Learning',
   },
   {
-    title: 'Generative AI & Modern Computing',
-    issuer: 'Infosys Springboard',
+    title: 'Web Development with AI',
+    issuer: 'Internshala Trainings · Final Assessment: 81%',
+    category: 'Development & Cyber',
+  },
+  {
+    title: 'Introduction to Modern AI',
+    issuer: 'Cisco Networking Academy',
+    year: '2025',
     category: 'AI & Machine Learning',
+  },
+  {
+    title: 'Artificial Intelligence for All',
+    issuer: 'Infosys Springboard',
+    year: '2025',
+    category: 'AI & Machine Learning',
+  },
+  {
+    title: 'Sensors and Actuators',
+    issuer: 'NPTEL · IISc Bangalore · Score: 61%',
+    category: 'Embedded & Hardware',
+  },
+  {
+    title: 'Embedded Systems Design',
+    issuer: 'NPTEL · IIT Kharagpur',
+    category: 'Embedded & Hardware',
   },
 ];
